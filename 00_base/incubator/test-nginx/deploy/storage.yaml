@@ -3,10 +3,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: test-nginx-claim
   namespace: test-nginx
-  annotations: 
-    kubevirt.io/provisionOnNode: prod-svc-270224
 spec:
-  storageClassName: kubevirt-hostpath-provisioner
+  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   resources:
