@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging-nginx
+  name: testpage-ing
+  namespace: test-nginx
+spec:
+  tls:
+  - hosts:
+    - test.kubelize.com
+    secretName: test-nginx-secret
+  ingressClassName: nginx
+  rules:
+  - host: test.kubelize.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: test-nginx-svc
+            port:
+              number: 80
