@@ -6,7 +6,7 @@ resources:
   # incubator
   # - ../../../00_base/incubator/helloworld/
   # - ../../../00_base/incubator/keycloak/
-  - ../../../00_base/incubator/home-assistent/
+  - ../../../00_base/incubator/home-assistant/
 
   # stable
   # - ../../../00_base/stable/nextcloud/
