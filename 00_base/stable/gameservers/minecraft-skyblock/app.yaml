@@ -175,7 +175,7 @@ spec:
           # Set to true if running Feed The Beast and get an error like "unable to launch forgemodloader"
           ftbLegacyJavaFixer: default
           # One of: peaceful, easy, normal, and hard
-          difficulty: easy
+          difficulty: normal
           # A comma-separated list of player names to whitelist.
           whitelist:
           # A comma-separated list of player names who should be admins.
