@@ -7,7 +7,7 @@ resources:
   # - ../../../00_base/incubator/helloworld/
   # - ../../../00_base/incubator/keycloak/
   - ../../../00_base/incubator/home-assistant/
-  - ../../../00_base/incubator/minecraft-skyblock/
+  - ../../../00_base/incubator/gameservers/minecraft-skyblock/
 
   # stable
   # - ../../../00_base/stable/nextcloud/
