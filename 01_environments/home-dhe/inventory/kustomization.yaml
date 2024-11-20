@@ -7,11 +7,12 @@ resources:
   # - ../../../00_base/incubator/helloworld/
   # - ../../../00_base/incubator/keycloak/
   - ../../../00_base/incubator/home-assistant/
+  - ../../../00base/incubator/minecraft-skyblock/
 
   # stable
   # - ../../../00_base/stable/nextcloud/
   # - ../../../00_base/stable/gameservers/sdtd/
-  - ../../../00_base/stable/gameservers/conan-exiles/
+  # - ../../../00_base/stable/gameservers/conan-exiles/
 
   # patches:
   #   - path: ./patches/example/example.yaml
