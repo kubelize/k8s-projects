@@ -8,6 +8,7 @@ resources:
   # - ../../../00_base/incubator/keycloak/
   - ../../../00_base/incubator/home-assistant/
   - ../../../00_base/stable/gameservers/minecraft-skyblock/
+  - ../../../00_base/stable/gameservers/minecraft-hardcore/
 
   # stable
   # - ../../../00_base/stable/nextcloud/
