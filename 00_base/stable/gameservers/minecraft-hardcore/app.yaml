@@ -197,7 +197,7 @@ spec:
           # Defines whether structures (such as villages) will be generated.
           generateStructures: default
           # If set to true, players will be set to spectator mode if they die.
-          hardcore: default
+          hardcore: true
           # The maximum height in which building is allowed.
           maxBuildHeight: 256
           # The maximum number of milliseconds a single tick may take before the server watchdog stops the server with the message. -1 disables this entirely.
