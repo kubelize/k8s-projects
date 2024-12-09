@@ -3,6 +3,7 @@ kind: Kustomization
 resources: []
 
   # incubator
+  - ../../../base/incubator/rickroll-heyya-immobilien-ch/
   # - ../../../base/incubator/helloworld/
   # - ../../../base/incubator/keycloak/
   # - ../../../base/incubator/home-assistant/
