@@ -8,11 +8,11 @@ metadata:
 spec:
   tls:
   - hosts:
-    - www.heyya-immobilien.ch
+    - heyya-immobilien.ch
     secretName: rickroll
   ingressClassName: nginx
   rules:
-  - host: www.heyya-immobilien.ch
+  - host: heyya-immobilien.ch
     http:
       paths:
       - path: /
