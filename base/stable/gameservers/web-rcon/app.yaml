@@ -4,6 +4,13 @@ metadata:
   name: web-rcon
   namespace: argocd
 spec:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+      allowEmpty: false
+    syncOptions:
+      - CreateNamespace=true
   project: default
   sources:
     - repoURL: https://github.com/kubelize/kube-projects
