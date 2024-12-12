@@ -8,5 +8,9 @@ resources:
 # stable
 # - ../../../base/stable/nextcloud/
 - ../../../base/stable/gameservers/minecraft-vanilla/
+
+# secrets
+- secrets/web-rcon.yaml
+
 # patches:
 #   - path: ./patches/example/example.yaml
