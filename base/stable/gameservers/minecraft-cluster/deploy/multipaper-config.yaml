@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: multipaper-config
+  namespace: minecraft-cluster
+data:
+  multipaper.yml: |
+    # This is the main configuration file for MultiPaper.
+    # There's quite alot to configure. Read the docs for more information.
+    #
+    # Docs: https://github.com/PureGero/MultiPaper/blob/main/MULTIPAPER_YAML.md
+
+    useLocalPlayerCountForServerIsFullKick: false
+    multipaperMasterAddress: multipaper-master:35353
+    advertiseToBuiltInProxy: true
+    filesToSyncOnStartup:
+    filesToSyncInRealTime:
+    filesToOnlyUploadOnServerStop:
+    ticksPerInactiveEntityTracking: 1
+    interServerCompressionThreshold: 0
+    interServerConsolidationDelay: 0
+    syncScoreboards: true
+    logFileSyncing: false
+    syncJsonFiles: false
+    filesToNotSync:
+    - plugins/bStats
+    bungeecordName: $HOSTNAME

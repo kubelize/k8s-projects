@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: multipaper-master
+  labels:
+    helm.sh/chart: multipaper-0.1.0
+    app.kubernetes.io/name: multipaper-master
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/version: "1.18.2-63"
+spec:
+  replicas: 1
+  updateStrategy:
+    type: RollingUpdate
+  serviceName: multipaper-master
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: multipaper-master
+      app.kubernetes.io/instance: release-name
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: multipaper-master
+        app.kubernetes.io/instance: release-name
+    spec:
+      serviceAccountName: multipaper
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+        runAsGroup: 1001
+        fsGroup: 1001
+      containers:
+        - name: multipaper-master
+          image: "alexohneander/multipaper-master:v0.1.0"
+          imagePullPolicy: IfNotPresent
+          command: [ "java", "-jar", "/multipaper/multipaper-master.jar" ]
+          args: [ "35353", "25565" ]
+          ports:
+            - name: server
+              containerPort: 35353
+              protocol: TCP
+            - name: proxy
+              containerPort: 25565
+              protocol: TCP
+          volumeMounts: 
+                - mountPath: /multipaper/data
+                  name: data
+  volumeClaimTemplates: 
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 30Gi
+        storageClassName: null
