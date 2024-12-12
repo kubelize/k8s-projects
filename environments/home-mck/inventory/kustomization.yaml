@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources: []
+resources: [
 
 # incubator
 # - ../../../base/incubator/test-nginx/
@@ -10,3 +10,4 @@ resources: []
 - ../../../base/stable/gameservers/minecraft-vanilla/
 # patches:
 #   - path: ./patches/example/example.yaml
+]
