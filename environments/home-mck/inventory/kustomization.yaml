@@ -10,7 +10,7 @@ resources:
 - ../../../base/stable/gameservers/minecraft-vanilla/
 
 # secrets
-- secrets/web-rcon.yaml
+- secrets/minecraft-rcon-password.yaml
 
 # patches:
 #   - path: ./patches/example/example.yaml
