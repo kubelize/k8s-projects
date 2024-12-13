@@ -14,13 +14,10 @@ resources:
 # secrets
 - secrets/minecraft-rcon-password.yaml
 - secrets/cf-api-token.yaml
+- secrets/web-rcon-config.yaml
 
 patches:
   - path: ./patches/vanilla-minecraft.yaml
     target:
       kind: Application
       name: vanilla-minecraft
-  - path: ./patches/web-rcon-config.yaml
-    target:
-      kind: ConfigMap
-      name: rcon-config

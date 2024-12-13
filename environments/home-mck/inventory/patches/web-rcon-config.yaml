@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: rcon-config
-data:
-  rcon.yaml: |
-    vanilla-minecraft:
-      address: "vanilla-minecraft-minecraft-rcon.minecraft.svc.cluster.local:25575"
-      log: "rcon-vanilla-minecraft.log"

@@ -20,10 +20,10 @@ spec:
           ports:
             - containerPort: 443
           volumeMounts:
-            - name: config-volume
+            - name: secret-volume
               mountPath: /home/kubelize/rcon.yaml
               subPath: rcon.yaml
       volumes:
-        - name: config-volume
-          configMap:
-            name: rcon-config
+        - name: secret-volume
+          secret:
+            secretName: rcon-config

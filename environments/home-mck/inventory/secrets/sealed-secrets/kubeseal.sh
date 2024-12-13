@@ -12,3 +12,9 @@ kubeseal --format=yaml \
   --cert=/home/dan/Git/kubelize/kube-builder/apps/addons/sealed-secrets/home-mck/pub-home-mck-sealed-secrets.pem \
   --secret-file /home/dan/Git/kubelize/kube-projects/environments/home-dhe/inventory/secrets/secret.yaml \
   --sealed-secret-file /home/dan/Git/kubelize/kube-projects/environments/home-mck/inventory/secrets/cf-api-token.yaml
+
+# rconf-config
+kubeseal --format=yaml \
+  --cert=/home/dan/Git/kubelize/kube-builder/apps/addons/sealed-secrets/home-mck/pub-home-mck-sealed-secrets.pem \
+  --secret-file /home/dan/Git/kubelize/kube-projects/environments/home-mck/inventory/secrets/secret-test.yaml \
+  --sealed-secret-file /home/dan/Git/kubelize/kube-projects/environments/home-mck/inventory/secrets/web-rcon-config.yaml
