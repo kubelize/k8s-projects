@@ -20,3 +20,7 @@ patches:
     target:
       kind: Application
       name: vanilla-minecraft
+  - path: ./patches/web-rcon-config.yaml
+    target:
+      kind: ConfigMap
+      name: rcon-config
