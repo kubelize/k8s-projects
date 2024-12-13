@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources: []
+resources: 
 
   # incubator
   # - ../../../base/incubator/rickroll-heyya-immobilien-ch/
@@ -14,6 +14,10 @@ resources: []
   # - ../../../base/stable/nextcloud/
   # - ../../../base/stable/gameservers/sdtd/
   # - ../../../base/stable/gameservers/conan-exiles/
+
+  # secrets
+  - secrets/minecraft-rcon-password.yaml
+  - secrets/cf-api-token.yaml
 
   # patches:
   #   - path: ./patches/example/example.yaml
