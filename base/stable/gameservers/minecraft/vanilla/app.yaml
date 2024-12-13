@@ -27,13 +27,13 @@ spec:
           tag: latest
           pullPolicy: IfNotPresent
         replicaCount: 1
-       resources:
-          requests:
-            memory: 2Gi
-            cpu: 1000m
-          limits:
-            memory: 4Gi
-            cpu: 20000m
+        resources:
+            requests:
+              memory: 2Gi
+              cpu: 1000m
+            limits:
+              memory: 4Gi
+              cpu: 20000m
         minecraftServer:
           eula: "TRUE"
           # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
