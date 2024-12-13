@@ -15,7 +15,7 @@ resources:
 - secrets/minecraft-rcon-password.yaml
 - secrets/cf-api-token.yaml
 
-# patches:
+patches:
   - path: ./patches/vanilla-minecraft.yaml
     target:
       kind: Application
