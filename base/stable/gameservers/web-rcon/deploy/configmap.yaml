@@ -4,12 +4,3 @@ metadata:
   name: rcon-config
 data:
   rcon.yaml: |
-    minecraft-vanilla:
-      address: "minecraft-vanilla-minecraft-rcon.minecraft.svc.cluster.local:25575"
-      log: "rcon-minecraft-vanilla.log"
-    # dawncraft:
-    #   address: "dawncraft-itzg-minecraft-rcon.minecraft.svc.cluster.local:25575"
-    #   log: "rcon-dawncraft.log"
-    # atm9:
-    #   address: "atm9-itzg-minecraft-rcon.minecraft.svc.cluster.local:25575"
-    #   log: "rcon-atm9.log"
