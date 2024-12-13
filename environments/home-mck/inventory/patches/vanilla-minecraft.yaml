@@ -10,6 +10,7 @@ spec:
           motd: §b❄
           maxTickTime: 60000
           difficulty: hard
+          levelSeed: -7857578951488376789
           whitelist: McKency, icykhaye
           icon: "https://raw.githubusercontent.com/kubelize/kube-projects/refs/heads/dev/environments/home-mck/inventory/src/assets/minecraft-christmas-tree.png"
 
