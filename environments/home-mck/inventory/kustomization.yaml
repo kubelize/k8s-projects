@@ -7,7 +7,7 @@ resources:
 
 # stable
 # - ../../../base/stable/nextcloud/
-- ../../../base/stable/gameservers/minecraft-vanilla/
+- ../../../base/stable/gameservers/minecraft/vanilla/
 - ../../../base/stable/gameservers/web-rcon/
 - ../../../base/stable/uptime-kuma/
 
@@ -16,4 +16,7 @@ resources:
 - secrets/cf-api-token.yaml
 
 # patches:
-#   - path: ./patches/example/example.yaml
+  - path: ./patches/vanilla-minecraft.yaml
+    target:
+      kind: Application
+      name: vanilla-minecraft

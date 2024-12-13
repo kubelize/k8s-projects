@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: patch
+spec:
+  source:
+    helm:
+      valuesObject:
+        minecraftServer:
+          motd: §b❄
+          maxTickTime: 60000
+          difficulty: hard
+          whitelist: McKency, icykhaye
+          icon: ""
+
+          

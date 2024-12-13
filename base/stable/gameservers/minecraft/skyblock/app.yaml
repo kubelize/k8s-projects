@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: itzg-minecraft
+  name: skyblock-minecraft
   namespace: argocd
 spec:
   syncPolicy:
@@ -27,10 +27,13 @@ spec:
           tag: latest
           pullPolicy: IfNotPresent
         replicaCount: 1
-        resources:
+       resources:
           requests:
-            memory: 512Mi
-            cpu: 500m
+            memory: 2Gi
+            cpu: 1000m
+          limits:
+            memory: 4Gi
+            cpu: 20000m
         minecraftServer:
           eula: "TRUE"
           # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
@@ -39,6 +42,10 @@ spec:
           type: "VANILLA"
           serviceType: LoadBalancer
           servicePort: 25565
+          maxTickTime: -1
+          motd: "Skyblock Minecraft on Kubernetes!"
+          memory: 2048M
+          downloadWorldUrl: "https://nc.skyblock.net/download/world/skyblock-2.1"
           rcon:
             enabled: true
             withGeneratedPassword: false
