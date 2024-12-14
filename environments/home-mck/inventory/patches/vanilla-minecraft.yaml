@@ -9,9 +9,9 @@ spec:
         minecraftServer:
           motd: §b❄
           maxTickTime: 60000
-          difficulty: hard
+          difficulty: normal
           levelSeed: "757067671151835873"
-          whitelist: McKency, icykhaye
+          whitelist: McKency, icykhaye, ispolell, NekoCho
           icon: "https://raw.githubusercontent.com/kubelize/kube-projects/refs/heads/dev/environments/home-mck/inventory/src/assets/minecraft-christmas-tree.png"
 
           
