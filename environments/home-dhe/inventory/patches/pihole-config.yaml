@@ -10,9 +10,10 @@
     value: LoadBalancer
 - op: add
   path: "/spec/source/helm/parameters/-"
-  value: 
-    name: serviceDns.annotations.lbipam.cilium.io/sharing-key
-    value: pihole
+  value:
+    name: serviceDns.annotations
+    value:
+      lbipam.cilium.io/sharing-key: pihole
 - op: add
   path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
   value:
