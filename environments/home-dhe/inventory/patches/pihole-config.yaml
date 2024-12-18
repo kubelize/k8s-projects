@@ -10,6 +10,15 @@
     annotations:
       lbipam.cilium.io/sharing-key: pihole
 - op: add
+  path: "/spec/source/helm/valuesObject/podDnsConfig"
+  value:
+    enabled: true
+    policy: "None"
+    nameservers:
+    - 127.0.0.1
+    - 195.186.1.162
+    - 195.186.4.162
+- op: add
   path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
   value:
     - address=/home-assistant.lan/10.130.5.232
