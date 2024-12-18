@@ -11,8 +11,8 @@
 - op: add
   path: "/spec/source/helm/parameters/-"
   value: 
-    name: serviceDns.annotations
-    value: lbipam.cilium.io/sharing-key=pihole
+    name: serviceDns.annotations.lbipam.cilium.io/sharing-key
+    value: pihole
 - op: add
   path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
   value:
