@@ -4,7 +4,7 @@ metadata:
   name: home-assistant
   namespace: argocd
   labels:
-    name: khome-assistant
+    name: home-assistant
 spec:
   syncPolicy:
     automated:
