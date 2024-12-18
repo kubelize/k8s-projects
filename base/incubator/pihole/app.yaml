@@ -25,6 +25,7 @@ spec:
       targetRevision:  2.27.0
       chart: pihole
       helm:
+        parameters: []
         valuesObject:
           persistentVolumeClaim:
             enabled: true
