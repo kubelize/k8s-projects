@@ -6,13 +6,6 @@ spec:
   sources:
     helm:
       valuesObject:
-        dnsmasq:
-          customDnsEntries:
-            - address=/home-assistant/10.130.5.232
-          customCnameEntries:
-            - cname=home-assistant.home,home-assistant
-        persistentVolumeClaim:
-          enabled: true
         serviceDns:
           loadBalancerIP: 10.130.5.231
           type: LoadBalancer
