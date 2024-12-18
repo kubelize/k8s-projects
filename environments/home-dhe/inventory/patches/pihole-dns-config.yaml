@@ -1,8 +1,0 @@
-- op: replace
-  path: "/spec/sources/helm/valuesObject/dnsmasq/customDnsEntries"
-  value:
-    - address=/home-assistant/10.130.5.232
-- op: replace
-  path: "/spec/sources/helm/valuesObject/dnsmasq/customCnameEntries"
-  value:
-    - cname=home-assistant.home,home-assistant

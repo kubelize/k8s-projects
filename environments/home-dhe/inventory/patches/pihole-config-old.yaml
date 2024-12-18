@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: patch
+spec:
+  sources:
+    helm:
+      valuesObject:
+        serviceDns:
+          loadBalancerIP: 10.130.5.231
+          type: LoadBalancer
