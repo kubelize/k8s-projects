@@ -14,9 +14,8 @@ resources:
   # - ../../../base/stable/gameservers/sdtd/
   # - ../../../base/stable/gameservers/conan-exiles/
 
-  # secrets
-  - secrets/minecraft-rcon-password.yaml
-  - secrets/cf-api-token.yaml
+- secrets/
+
 
 patches:
   - path: ./patches/pihole-config.yaml
