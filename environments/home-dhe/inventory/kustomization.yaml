@@ -23,7 +23,3 @@ patches:
     target:
       kind: Application
       name: pihole
-  - path: ./patches/pihole-dns-config.yaml
-    target:
-      kind: Application
-      name: pihole
