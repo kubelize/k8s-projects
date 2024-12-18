@@ -1,4 +1,7 @@
 - op: add
+  path: "/spec/source/helm/valuesObject/virtualHost"
+  value: home-dhe-pihole.teleport.kubelize.com
+- op: add
   path: "/spec/source/helm/valuesObject/serviceDns"
   value:
     loadBalancerIP: 10.130.5.232
