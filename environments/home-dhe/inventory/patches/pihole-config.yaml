@@ -11,7 +11,7 @@
 - op: add
   path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
   value:
-    - address=/home-assistant/10.130.5.232
+    - address=/home-assistant/10.130.5.231
 - op: add
   path: "/spec/source/helm/valuesObject/dnsmasq/customCnameEntries"
   value:
