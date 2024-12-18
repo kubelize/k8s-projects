@@ -1,18 +1,10 @@
 - op: add
-  path: "/spec/source/helm/parameters/-"
+  path: "/spec/source/helm/valuesObject/serviceDns"
   value:
-    name: serviceDns.loadBalancerIP
-    value: 10.130.5.231
-- op: add
-  path: "/spec/source/helm/parameters/-"
-  value:
-    name: serviceDns.type
-    value: LoadBalancer
-- op: add
-  path: "/spec/source/helm/parameters/-"
-  value:
-    name: serviceDns.annotations.lbipam.cilium.io/sharing-key
-    value: pihole
+    loadBalancerIP: 10.130.5.232
+    type: LoadBalancer
+    annotations:
+      lbipam.cilium.io/sharing-key: pihole
 - op: add
   path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
   value:
