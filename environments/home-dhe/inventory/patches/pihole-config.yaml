@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: patch
 spec:
-  source:
+  sources:
     helm:
       valuesObject:
         dnsmasq:
