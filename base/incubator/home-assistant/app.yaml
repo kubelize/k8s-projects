@@ -17,9 +17,6 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: home-assistant
-  syncPolicy:
-    automated:
-      prune: false
   sources:
     - repoURL: https://github.com/kubelize/kube-projects
       targetRevision: dev
