@@ -4,15 +4,12 @@
 - op: add
   path: "/spec/source/helm/valuesObject/serviceDns"
   value:
-    loadBalancerIP: 10.130.5.232
+    externalTrafficPolicy: Cluster
+    loadBalancerIP: 10.130.5.231
     type: LoadBalancer
     annotations:
       lbipam.cilium.io/sharing-key: pihole
 - op: add
   path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
   value:
-    - address=/home-assistant/10.130.5.231
-- op: add
-  path: "/spec/source/helm/valuesObject/dnsmasq/customCnameEntries"
-  value:
-    - cname=home-assistant.home,home-assistant
+    - address=/home-assistant.lan/10.130.5.232
