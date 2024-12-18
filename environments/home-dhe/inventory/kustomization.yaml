@@ -4,9 +4,8 @@ resources:
 
   # incubator
   # - ../../../base/incubator/rickroll-heyya-immobilien-ch/
-  # - ../../../base/incubator/helloworld/
-  # - ../../../base/incubator/keycloak/
   - ../../../base/incubator/home-assistant/
+  - ../../../base/incubator/pihole/
   # - ../../../base/stable/gameservers/minecraft-skyblock/
   # - ../../../base/stable/gameservers/minecraft-hardcore/
 
@@ -19,5 +18,8 @@ resources:
   - secrets/minecraft-rcon-password.yaml
   - secrets/cf-api-token.yaml
 
-  # patches:
-  #   - path: ./patches/example/example.yaml
+patches:
+  - path: ./patches/pihole-config.yaml
+    target:
+      kind: Application
+      name: pihole
