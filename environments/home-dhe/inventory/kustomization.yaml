@@ -14,8 +14,7 @@ resources:
   # - ../../../base/stable/gameservers/sdtd/
   # - ../../../base/stable/gameservers/conan-exiles/
 
-- secrets/
-
+  - secrets/
 
 patches:
   - path: ./patches/pihole-config.yaml
