@@ -17,15 +17,15 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: pihole
-  sources:
-    - repoURL: https://github.com/kubelize/kube-projects
-      targetRevision: dev
-      path: base/incubator/pihole/deploy
-    - repoURL: https://mojo2600.github.io/pihole-kubernetes/
-      targetRevision:  2.27.0
-      chart: pihole
-      helm:
-        parameters: []
-        valuesObject:
-          persistentVolumeClaim:
-            enabled: true
+  source:
+    repoURL: https://mojo2600.github.io/pihole-kubernetes/
+    targetRevision:  2.27.0
+    chart: pihole
+    helm:
+      parameters: []
+      valuesObject:
+        persistentVolumeClaim:
+          enabled: true
+        dnsmasq:
+          customDnsEntries: []
+          customCnameEntries: []
