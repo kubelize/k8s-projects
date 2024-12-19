@@ -1,0 +1,22 @@
+- op: add
+  path: "/spec/source/helm/valuesObject/virtualHost"
+  value: home-mck-pihole.teleport.kubelize.com
+- op: add
+  path: "/spec/source/helm/valuesObject/serviceDns"
+  value:
+    externalTrafficPolicy: Cluster
+    mixedService: true
+    loadBalancerIP: 192.168.1.232
+    type: LoadBalancer
+    annotations:
+      lbipam.cilium.io/sharing-key: pihole
+# - op: add
+#   path: "/spec/source/helm/valuesObject/DNS1"
+#   value: 195.186.1.162
+# - op: add
+#   path: "/spec/source/helm/valuesObject/DNS2"
+#   value: 195.186.4.162
+# - op: add
+#   path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
+#   value:
+#     - address=/home-assistant.lan/10.130.5.232
