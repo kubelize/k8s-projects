@@ -24,8 +24,6 @@ spec:
           value: "80"
         - name: ROCKET_ENV
           value: "production"
-        - name: DATABASE_URL
-          value: "sqlite:/data/db.sqlite3"
       #   volumeMounts:
       #   - name: data
       #     mountPath: /data
