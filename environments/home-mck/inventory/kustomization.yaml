@@ -3,14 +3,13 @@ kind: Kustomization
 resources: 
 
 # incubator
-# - ../../../base/incubator/test-nginx/
+- ../../../base/incubator/pihole/
 
 # stable
 # - ../../../base/stable/nextcloud/
 - ../../../base/stable/gameservers/minecraft/vanilla/
 - ../../../base/stable/gameservers/web-rcon/
 - ../../../base/stable/uptime-kuma/
-- ../../../base/incubator/pihole/
 
 # secrets
 - secrets/minecraft-rcon-password.yaml

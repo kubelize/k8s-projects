@@ -3,11 +3,9 @@ kind: Kustomization
 resources: 
 
   # incubator
-  # - ../../../base/incubator/rickroll-heyya-immobilien-ch/
   - ../../../base/incubator/home-assistant/
   - ../../../base/incubator/pihole/
-  # - ../../../base/stable/gameservers/minecraft-skyblock/
-  # - ../../../base/stable/gameservers/minecraft-hardcore/
+  - ../../../base/incubator/vaultwarden/
 
   # stable
   # - ../../../base/stable/nextcloud/
