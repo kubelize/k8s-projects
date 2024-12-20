@@ -13,7 +13,7 @@ spec:
           maxTickTime: 60000
           difficulty: hard
           levelSeed: "757067671151835873"
-          whitelist: Moffoso, Reitochan
+          whitelist: Moffoso, Reitorii
           icon: "https://raw.githubusercontent.com/kubelize/kube-projects/refs/heads/dev/environments/home-dhe/inventory/src/assets/minecraft-spider-snow.jpg"
           viewDistance: 16
 
