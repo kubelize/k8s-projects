@@ -11,7 +11,7 @@ resources:
   # - ../../../base/stable/nextcloud/
   # - ../../../base/stable/gameservers/sdtd/
   # - ../../../base/stable/gameservers/conan-exiles/
-  - ../../../base/stable/gameservers/Far_Far_Away/terraria/
+  - ../../../base/stable/gameservers/terraria/farfaraway/
   - ../../../base/stable/gameservers/minecraft/vanilla/
   # - ../../../base/stable/gameservers/minecraft/rlcraft/
   - secrets/
