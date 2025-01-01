@@ -14,21 +14,28 @@ spec:
       labels:
         app: terraria
     spec:
+      initContainers:
+        - name: init-permissions
+          image: busybox
+          command: ["sh", "-c", "mkdir -p /home/terra/.local/share/Terraria && chown -R 1000:1000 /home/terra/.local/share/Terraria"]
+          volumeMounts:
+            - mountPath: /home/terra/.local/share/Terraria
+              name: terraria-data
       containers:
       - name: terraria
         image: kubelize/terraria:0.0.4
         ports:
         - containerPort: 7777
         volumeMounts:
-        - name: terraria-world
+        - name: terraria-data
           mountPath: /home/terra/.local/share/Terraria
         - name: config-volume
           mountPath: /home/terra/.local/share/Terraria/ServerSettings.txt
           subPath: ServerSettings.txt
       volumes:
-      - name: terraria-world
+      - name: terraria-data
         persistentVolumeClaim:
-          claimName: terraria-world
+          claimName: terraria-data
       - name: config-volume
         configMap:
-          name: terraria-server-settings
+          name: terraria-settings
