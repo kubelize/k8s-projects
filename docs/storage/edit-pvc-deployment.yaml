@@ -20,8 +20,8 @@ spec:
         command: ["/bin/sleep", "infinity"]  # Keeps the container running
         volumeMounts:
         - name: pvc-volume
-          mountPath: /home/sdtdserver # Mount point for the PVC
+          mountPath: /root/.local/share/Terraria/Worlds # Mount point for the PVC
       volumes:
       - name: pvc-volume
         persistentVolumeClaim:
-          claimName: sdtdserver-data # Name of your existing PVC
+          claimName: terraria-world # Name of your existing PVC
