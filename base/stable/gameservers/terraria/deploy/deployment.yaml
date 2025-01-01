@@ -17,7 +17,7 @@ spec:
       initContainers:
         - name: init-permissions
           image: busybox
-          command: ["sh", "-c", "mkdir -p /home/terra/.local/share/Terraria && chown -R 1000:1000 /home/terra"]
+          command: ["sh", "-c", "mkdir -p /home/terra/.local/share/Terraria && chown -R 1000:1000 /home/terra && chmod +x /home/terra/entrypoint.sh"]
           volumeMounts:
             - mountPath: /home/terra/.local/share/Terraria
               name: terraria-data
