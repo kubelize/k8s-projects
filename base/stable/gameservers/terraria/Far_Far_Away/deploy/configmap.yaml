@@ -7,7 +7,8 @@ data:
   serversettings.txt: |
     maxplayers=16
     port=7777
-    motd=Welcome to the Terraria server!
+    motd=A world of small kubes!
+    worldname="Far Far Away"
     autocreate=3
     difficulty=2
     world=/home/terra/.local/share/Terraria/Worlds/The_Big_Flats.wld

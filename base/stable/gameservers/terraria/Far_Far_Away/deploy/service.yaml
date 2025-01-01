@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: terraria-service
   namespace: terraria
+  annotations:
+    "lbipam.cilium.io/ips": "10.130.5.236"
 spec:
   type: LoadBalancer
   selector:
