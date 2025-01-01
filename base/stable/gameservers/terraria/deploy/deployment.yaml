@@ -21,7 +21,7 @@ spec:
         - containerPort: 7777
         env:
         - name: WORLD_FILENAME
-          value: "<.wld world_filename_here>"
+          value: The_Big_Flats.wld
         volumeMounts:
         - name: terraria-world
           mountPath: /root/.local/share/Terraria/Worlds
