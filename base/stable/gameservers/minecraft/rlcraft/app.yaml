@@ -47,7 +47,7 @@ spec:
           motd: "RLCraft on Kubernetes!"
           memory: 4096M
           icon: "https://raw.githubusercontent.com/kubelize/kube-builder/refs/heads/dev/docs/src/assets/logo.png"
-          rcon:
+          rcon:git
             enabled: true
             withGeneratedPassword: false
             port: 25575
@@ -58,14 +58,6 @@ spec:
             apiKey:
               existingSecret: "cf-api-token"
               secretKey: cf-api-key
-<<<<<<< HEAD
-            # Link to modpack page on CurseForge, example: https://www.curseforge.com/minecraft/modpacks/all-the-mods-9/download/5564373
-            pageUrl: "https://www.curseforge.com/minecraft/modpacks/rlcraft/files/4612979"
-            # slug: "rlcraft"
-            # Less restrictive way of specifying modpack version, uses substring match example: "1.16.5"
-            filenameMatcher: ""
-=======
->>>>>>> 7f4fcef (chore: testing cfservermod for rlcraft on home-dhe)
         persistence:
           storageClass: "longhorn"
           dataDir:
