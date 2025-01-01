@@ -58,7 +58,7 @@ spec:
             apiKey:
               existingSecret: "cf-api-token"
               secretKey: cf-api-key
-              pageUrl: "https://www.curseforge.com/minecraft/modpacks/rlcraft/4612979"
+            pageUrl: "https://www.curseforge.com/minecraft/modpacks/rlcraft/4612979"
         persistence:
           storageClass: "longhorn"
           dataDir:
