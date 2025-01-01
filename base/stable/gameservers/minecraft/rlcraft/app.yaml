@@ -47,7 +47,7 @@ spec:
           motd: "RLCraft on Kubernetes!"
           memory: 4096M
           icon: "https://raw.githubusercontent.com/kubelize/kube-builder/refs/heads/dev/docs/src/assets/logo.png"
-          rcon:git
+          rcon:
             enabled: true
             withGeneratedPassword: false
             port: 25575
