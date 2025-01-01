@@ -44,4 +44,4 @@ spec:
           name: terraria-settings
       - name: entrypoint
         configMap:
-          name: terraria-settings
+          name: entrypoint
