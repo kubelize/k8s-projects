@@ -39,8 +39,8 @@ spec:
           # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
           version: 1.12.2
           # This can be one of "VANILLA", "AUTO_CURSEFORGE"
-          type: "CURSEFORGE"
-          cfServerMod: "https://www.curseforge.com/minecraft/modpacks/rlcraft/download/4612979"
+          type: "AUTO_CURSEFORGE"
+          cfServerMod: ""
           serviceType: LoadBalancer
           servicePort: 25566
           maxTickTime: -1
@@ -58,6 +58,7 @@ spec:
             apiKey:
               existingSecret: "cf-api-token"
               secretKey: cf-api-key
+              pageUrl: "https://www.curseforge.com/minecraft/modpacks/rlcraft"
         persistence:
           storageClass: "longhorn"
           dataDir:
