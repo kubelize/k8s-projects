@@ -5,10 +5,9 @@ metadata:
   namespace: terraria
 data:
   ServerSettings.txt: |
-    # Terraria Server Settings
     maxplayers=16
     port=7777
-    password=""
     motd=Welcome to the Terraria server!
     autocreate=3
     difficulty=2
+    world=/home/terra/.local/share/Terraria/Worlds/The_Big_Flats.wld
