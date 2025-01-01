@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: entrypoint
-  namespace: terraria
-data:
-  entrypoint.sh: |
-    #!/bin/sh
-    /home/terra/1449/Linux/TerrariaServer -config /home/terra/serversettings.txt

@@ -23,7 +23,7 @@ spec:
               name: terraria-data
       containers:
       - name: terraria
-        image: kubelize/terraria:0.1.2
+        image: kubelize/terraria:0.1.3
         ports:
         - containerPort: 7777
         volumeMounts:
@@ -32,9 +32,6 @@ spec:
         - name: config-volume
           mountPath: /home/terra/serversettings.txt
           subPath: serversettings.txt
-        - name: entrypoint
-          mountPath: /home/terra/entrypoint.sh
-          subPath: entrypoint.sh
       volumes:
       - name: terraria-data
         persistentVolumeClaim:
@@ -42,6 +39,3 @@ spec:
       - name: config-volume
         configMap:
           name: terraria-settings
-      - name: entrypoint
-        configMap:
-          name: entrypoint
