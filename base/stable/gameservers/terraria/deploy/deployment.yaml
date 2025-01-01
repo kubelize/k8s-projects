@@ -16,16 +16,19 @@ spec:
     spec:
       containers:
       - name: terraria
-        image: ryshe/terraria:latest
+        image: kubelize/terraria:0.0.4
         ports:
         - containerPort: 7777
-        env:
-        - name: WORLD_FILENAME
-          value: The_Big_Flats.wld
         volumeMounts:
         - name: terraria-world
-          mountPath: /root/.local/share/Terraria/Worlds
+          mountPath: /home/terra/.local/share/Terraria
+        - name: config-volume
+          mountPath: /home/terra/.local/share/Terraria/ServerSettings.txt
+          subPath: ServerSettings.txt
       volumes:
       - name: terraria-world
         persistentVolumeClaim:
           claimName: terraria-world
+      - name: config-volume
+        configMap:
+          name: terraria-server-settings

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: terraria-server-settings
+  namespace: terraria
+data:
+  ServerSettings.txt: |
+    # Terraria Server Settings
+    maxplayers=16
+    port=7777
+    password=""
+    motd=Welcome to the Terraria server!
+    autocreate=3
+    difficulty=2
