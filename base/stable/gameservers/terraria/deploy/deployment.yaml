@@ -25,12 +25,7 @@ spec:
         volumeMounts:
         - name: terraria-world
           mountPath: /root/.local/share/Terraria/Worlds
-        # - name: terraria-settings
-        #   mountPath: /tshock
       volumes:
       - name: terraria-world
         persistentVolumeClaim:
           claimName: terraria-world
-      # - name: terraria-settings
-      #   persistentVolumeClaim:
-      #     claimName: terraria-settings
