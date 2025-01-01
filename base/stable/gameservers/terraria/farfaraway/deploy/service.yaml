@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: terraria-service
+  name: terraria-farfaraway
   namespace: terraria
   annotations:
     "lbipam.cilium.io/ips": "10.130.5.236"
 spec:
   type: LoadBalancer
   selector:
-    app: terraria
+    app: terraria-farfaraway
   ports:
     - protocol: TCP
       port: 7777

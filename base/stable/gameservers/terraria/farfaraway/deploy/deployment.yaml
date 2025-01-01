@@ -1,41 +1,41 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: terraria
+  name: terraria-farfaraway
   labels:
-    app: terraria
+    app: terraria-farfaraway
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: terraria
+      app: terraria-farfaraway
   template:
     metadata:
       labels:
-        app: terraria
+        app: terraria-farfaraway
     spec:
       initContainers:
         - name: init-permissions
           image: busybox
-          command: ["sh", "-c", "mkdir -p /home/terra/.local/share/Terraria && chown -R 1000:1000 /home/terra"]
+          command: ["sh", "-c", "mkdir -p /home/terra/.local/share/terraria && chown -R 1000:1000 /home/terra"]
           volumeMounts:
-            - mountPath: /home/terra/.local/share/Terraria
-              name: terraria-data
+            - mountPath: /home/terra/.local/share/terraria
+              name: terraria-farfaraway-data
       containers:
-      - name: terraria
+      - name: terraria-farfaraway
         image: kubelize/terraria:0.1.3
         ports:
         - containerPort: 7777
         volumeMounts:
-        - name: terraria-data
-          mountPath: /home/terra/.local/share/Terraria
+        - name: terraria-farfaraway-data
+          mountPath: /home/terra/.local/share/terraria-farfaraway
         - name: config-volume
           mountPath: /home/terra/serversettings.txt
           subPath: serversettings.txt
       volumes:
-      - name: terraria-data
+      - name: terraria-farfaraway-data
         persistentVolumeClaim:
-          claimName: terraria-data
+          claimName: terraria-farfaraway-data
       - name: config-volume
         configMap:
-          name: terraria-settings
+          name: terraria-farfaraway-settings

@@ -14,7 +14,7 @@ spec:
   project: default
   sources:
     - repoURL: https://github.com/kubelize/kube-projects
-      path: base/stable/gameservers/terraria/deploy
+      path: base/stable/gameservers/terraria/farfaraway/deploy
       targetRevision: dev
   destination:
     server: https://kubernetes.default.svc
