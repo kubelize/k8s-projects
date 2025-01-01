@@ -58,7 +58,8 @@ spec:
               existingSecret: "cf-api-token"
               secretKey: cf-api-key
             # Link to modpack page on CurseForge, example: https://www.curseforge.com/minecraft/modpacks/all-the-mods-9/download/5564373
-            pageUrl: "https://www.curseforge.com/minecraft/modpacks/rlcraft/download/4612979"
+            pageUrl: ""
+            slug: "rlcraft"
             # Less restrictive way of specifying modpack version, uses substring match example: "1.16.5"
             filenameMatcher: ""
         persistence:

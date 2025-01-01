@@ -10,7 +10,7 @@ spec:
           serviceAnnotations:
             "lbipam.cilium.io/ips": "192.168.1.232"
           motd: §4💀
-          maxTickTime: 60000
+          maxTickTime: -1
           difficulty: hard
           levelSeed: ""
           whitelist: McKency, icykhaye, ispolell, NekoCho, CellCraft, premiumching

@@ -13,7 +13,7 @@ resources:
   # - ../../../base/stable/gameservers/conan-exiles/
   - ../../../base/stable/gameservers/terraria/
   - ../../../base/stable/gameservers/minecraft/vanilla/
-
+  - ../../../base/stable/gameservers/minecraft/rlcraft/
   - secrets/
 
 patches:
