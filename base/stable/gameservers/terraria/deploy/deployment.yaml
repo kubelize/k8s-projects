@@ -23,15 +23,15 @@ spec:
               name: terraria-data
       containers:
       - name: terraria
-        image: kubelize/terraria:0.0.7
+        image: kubelize/terraria:0.0.8
         ports:
         - containerPort: 7777
         volumeMounts:
         - name: terraria-data
           mountPath: /home/terra/.local/share/Terraria
         - name: config-volume
-          mountPath: /home/terra/.local/share/Terraria/ServerSettings.txt
-          subPath: ServerSettings.txt
+          mountPath: /home/terra/serversettings.txt
+          subPath: serversettings.txt
       volumes:
       - name: terraria-data
         persistentVolumeClaim:

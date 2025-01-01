@@ -4,7 +4,7 @@ metadata:
   name: terraria-settings
   namespace: terraria
 data:
-  ServerSettings.txt: |
+  serversettings.txt: |
     maxplayers=16
     port=7777
     motd=Welcome to the Terraria server!
