@@ -39,7 +39,7 @@ spec:
           # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
           version: 1.12.2
           # This can be one of "VANILLA", "AUTO_CURSEFORGE"
-          type: "AUTO_CURSEFORGE"
+          type: "CURSEFORGE"
           serviceType: LoadBalancer
           servicePort: 25566
           maxTickTime: -1
@@ -66,6 +66,6 @@ spec:
           storageClass: "longhorn"
           dataDir:
             enabled: true
-            Size: 10Gi
+            Size: 15Gi
             accessModes:
               - ReadWriteOnce
