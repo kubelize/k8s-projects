@@ -17,13 +17,13 @@ spec:
       initContainers:
         - name: init-permissions
           image: busybox
-          command: ["sh", "-c", "mkdir -p /home/terra/.local/share/Terraria && chown -R 1000:1000 /home/terra/.local/share/Terraria"]
+          command: ["sh", "-c", "mkdir -p /home/terra/.local/share/Terraria && chown -R 1000:1000 /home/terra"]
           volumeMounts:
             - mountPath: /home/terra/.local/share/Terraria
               name: terraria-data
       containers:
       - name: terraria
-        image: kubelize/terraria:0.1.0
+        image: kubelize/terraria:0.1.1
         ports:
         - containerPort: 7777
         volumeMounts:
@@ -32,10 +32,16 @@ spec:
         - name: config-volume
           mountPath: /home/terra/serversettings.txt
           subPath: serversettings.txt
+        - name: entrypoint
+          mountPath: /home/terra/entrypoint.sh
+          subPath: entrypoint.sh
       volumes:
       - name: terraria-data
         persistentVolumeClaim:
           claimName: terraria-data
       - name: config-volume
+        configMap:
+          name: terraria-settings
+      - name: entrypoint
         configMap:
           name: terraria-settings
