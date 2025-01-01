@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: terraria
+  labels:
+    app: terraria
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: terraria
+  template:
+    metadata:
+      labels:
+        app: terraria
+    spec:
+      containers:
+      - name: terraria
+        image: ryshe/terraria:latest
+        ports:
+        - containerPort: 7777
+        env:
+        - name: WORLD_FILENAME
+          value: "<.wld world_filename_here>"
+        volumeMounts:
+        - name: terraria-world
+          mountPath: /root/.local/share/Terraria/Worlds
+        - name: terraria-settings
+          mountPath: /tshock
+      volumes:
+      - name: terraria-world
+        persistentVolumeClaim:
+          claimName: terraria-world
+      - name: terraria-settings
+        persistentVolumeClaim:
+          claimName: terraria-settings
