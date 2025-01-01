@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: terraria-server-settings
+  name: terraria-settings
   namespace: terraria
 data:
   ServerSettings.txt: |
