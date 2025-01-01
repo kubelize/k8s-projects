@@ -8,7 +8,7 @@ data:
     maxplayers=16
     port=7777
     motd=A world of small kubes!
-    worldname="Far Far Away"
+    worldname="FarFarAway"
     autocreate=3
     difficulty=2
     world=/home/terra/.local/share/Terraria/Worlds/The_Big_Flats.wld
