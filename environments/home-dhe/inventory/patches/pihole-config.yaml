@@ -20,3 +20,4 @@
   path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
   value:
     - address=/home-assistant.lan/10.130.5.232
+    - address=/rpi-mirror.lan/
