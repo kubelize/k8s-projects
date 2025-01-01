@@ -9,6 +9,4 @@ data:
     port=7777
     motd=A world of small kubes!
     worldname="FarFarAway"
-    autocreate=3
-    difficulty=2
-    world=/home/terra/.local/share/Terraria/Worlds/The_Big_Flats.wld
+    world=/home/terra/.local/share/Terraria/Worlds/Far_Far_Away.wld
