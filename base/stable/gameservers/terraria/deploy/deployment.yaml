@@ -23,7 +23,7 @@ spec:
               name: terraria-data
       containers:
       - name: terraria
-        image: kubelize/terraria:0.0.8
+        image: kubelize/terraria:0.0.9
         ports:
         - containerPort: 7777
         volumeMounts:
