@@ -16,5 +16,12 @@ spec:
           whitelist: McKency, icykhaye, ispolell, NekoCho
           icon: "https://raw.githubusercontent.com/kubelize/kube-projects/refs/heads/dev/environments/home-mck/inventory/src/assets/minecraft-christmas-tree.png"
           viewDistance: 16
+          memory: 8192M
+          resources:
+            requests:
+              memory: 4Gi
+            limits:
+              memory: 8Gi
+          
 
           
