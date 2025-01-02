@@ -30,8 +30,8 @@ spec:
         - name: terraria-farfaraway-data
           mountPath: /home/terra/.local/share/Terraria/Worlds
         - name: config-volume
-          mountPath: /home/terra/serversettings.txt
-          subPath: serversettings.txt
+          mountPath: /config/serverconfig.txt
+          subPath: serverconfig.txt
       volumes:
       - name: terraria-farfaraway-data
         persistentVolumeClaim:

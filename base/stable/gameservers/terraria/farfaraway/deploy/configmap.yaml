@@ -4,7 +4,7 @@ metadata:
   name: terraria-farfaraway-settings
   namespace: terraria
 data:
-  serversettings.txt: |
+  serverconfig.txt: |
     maxplayers=16
     port=7777
     autocreate=3
