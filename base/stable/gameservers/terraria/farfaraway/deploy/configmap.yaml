@@ -5,8 +5,11 @@ metadata:
   namespace: terraria
 data:
   serversettings.txt: |
+    autocreate=3
+    difficulty=2
     maxplayers=16
     port=7777
     motd=A world of small kubes!
     worldname="FarFarAway"
     world=/home/terra/.local/share/Terraria/Worlds/Far_Far_Away.wld
+    worldpath=/home/terra/.local/share/Terraria/Worlds

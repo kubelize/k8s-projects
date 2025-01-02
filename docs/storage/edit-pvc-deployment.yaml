@@ -24,4 +24,4 @@ spec:
       volumes:
       - name: pvc-volume
         persistentVolumeClaim:
-          claimName: terraria-world # Name of your existing PVC
+          claimName: terraria-farfaraway-data # Name of your existing PVC
