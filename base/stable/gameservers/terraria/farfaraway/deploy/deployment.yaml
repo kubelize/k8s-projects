@@ -17,9 +17,9 @@ spec:
       containers:
       - name: terraria-farfaraway
         image: kubelize/terraria:0.1.4
-        env:
-        - name: WORLD_FILENAME
-          value: "FarFarAway.wld"
+        # env:
+        # - name: WORLD_FILENAME
+        #   value: "FarFarAway.wld"
         ports:
         - containerPort: 7777
         volumeMounts:
