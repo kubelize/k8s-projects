@@ -6,7 +6,7 @@ metadata:
 data:
   serversettings.txt: |
     autocreate=3
-    difficulty=2
+    difficulty=3
     maxplayers=16
     port=7777
     motd=A world of small kubes!
