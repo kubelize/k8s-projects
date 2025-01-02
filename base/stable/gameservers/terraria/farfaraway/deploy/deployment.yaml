@@ -23,12 +23,12 @@ spec:
               name: terraria-farfaraway-data
       containers:
       - name: terraria-farfaraway
-        image: kubelize/terraria:0.1.3
+        image: kubelize/terraria:0.1.4
         ports:
         - containerPort: 7777
         volumeMounts:
         - name: terraria-farfaraway-data
-          mountPath: /home/terra/.local/share/terraria-farfaraway
+          mountPath: /home/terra/.local/share/Terraria/Worlds
         - name: config-volume
           mountPath: /home/terra/serversettings.txt
           subPath: serversettings.txt
