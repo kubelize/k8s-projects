@@ -7,7 +7,5 @@ data:
   serverconfig.txt: |
     maxplayers=16
     port=7777
-    autocreate=3
-    difficulty=3
     motd=A world of small kubes!
     worldname="FarFarAway"
