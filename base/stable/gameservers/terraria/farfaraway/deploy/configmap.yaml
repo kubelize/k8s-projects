@@ -12,3 +12,4 @@ data:
     motd=A world of small kubes!
     worldname="FarFarAway"
     worldpath=/home/terra/.local/share/Terraria/Worlds
+    world=/home/terra/.local/share/Terraria/Worlds/Far_Far_Away.wld
