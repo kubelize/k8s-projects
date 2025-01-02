@@ -8,4 +8,4 @@ data:
     maxplayers=16
     port=7777
     motd=A world of small kubes!
-    worldname="FarFarAway"
+    worldname=FarFarAway
