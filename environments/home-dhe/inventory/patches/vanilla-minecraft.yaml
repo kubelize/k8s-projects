@@ -8,6 +8,7 @@ spec:
       valuesObject:
         minecraftServer:
           motd: "Definitly not a spoopy server."
+          type: "PAPER"
           maxTickTime: 60000
           difficulty: hard
           levelSeed: "757067671151835873"
