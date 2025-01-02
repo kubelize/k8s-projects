@@ -14,13 +14,6 @@ spec:
       labels:
         app: terraria-farfaraway
     spec:
-      initContainers:
-        - name: init-permissions
-          image: busybox
-          command: ["sh", "-c", "mkdir -p /home/terra/.local/share/terraria && chown -R 1000:1000 /home/terra"]
-          volumeMounts:
-            - mountPath: /home/terra/.local/share/Terraria
-              name: terraria-farfaraway-data
       containers:
       - name: terraria-farfaraway
         image: kubelize/terraria:0.1.4
@@ -31,7 +24,7 @@ spec:
         - containerPort: 7777
         volumeMounts:
         - name: terraria-farfaraway-data
-          mountPath: /home/terra/.local/share/Terraria/Worlds
+          mountPath: /root/.local/share/Terraria/Worlds
         - name: config-volume
           mountPath: /config/serverconfig.txt
           subPath: serverconfig.txt
