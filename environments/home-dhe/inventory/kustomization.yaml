@@ -15,6 +15,7 @@ resources:
   - ../../../base/stable/gameservers/minecraft/vanilla/
   - ../../../base/stable/gameservers/minecraft/rlcraft/
   - ../../../base/stable/uptime-kuma/
+  - ../../../archive/projects/incubator/gameservers/atm9-itzg/
 
   # secrets
   - secrets/
