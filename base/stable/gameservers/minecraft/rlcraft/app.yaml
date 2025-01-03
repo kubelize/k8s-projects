@@ -24,7 +24,7 @@ spec:
       valuesObject:
         image:
           repository: itzg/minecraft-server
-          tag: latest
+          tag: java8-jdk
           pullPolicy: IfNotPresent
         replicaCount: 1
         resources:
