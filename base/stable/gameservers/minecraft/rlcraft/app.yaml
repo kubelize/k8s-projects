@@ -40,6 +40,7 @@ spec:
           version: 1.12.2
           # This can be one of "VANILLA", "AUTO_CURSEFORGE"
           type: "AUTO_CURSEFORGE"
+          forgeVersion: "14.23.5.2860"
           cfServerMod: ""
           serviceType: LoadBalancer
           servicePort: 25566
