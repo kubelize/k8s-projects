@@ -43,7 +43,7 @@ spec:
           forgeVersion: "14.23.5.2860"
           cfServerMod: ""
           serviceType: LoadBalancer
-          servicePort: 25566
+          servicePort: 25565
           maxTickTime: -1
           motd: "RLCraft on Kubernetes!"
           memory: 4096M
