@@ -11,17 +11,10 @@ spec:
             "lbipam.cilium.io/ips": "192.168.1.233"
           motd: §b💀
           maxTickTime: 60000
-          difficulty: hard
-          levelSeed: ""
+          difficulty: normal
           whitelist: McKency, icykhaye, ispolell, NekoCho, CellCraft, premiumching
           icon: "https://raw.githubusercontent.com/kubelize/kube-projects/refs/heads/dev/environments/home-mck/inventory/src/assets/minecraft-rlcraft-icon.png"
-          viewDistance: 12
-          memory: 4096M
-        resources:
-          requests:
-            memory: 4096Mi
-          limits:
-            memory: 8192Mi
+
           
 
           
