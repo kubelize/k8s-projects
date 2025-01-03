@@ -13,7 +13,6 @@ resources:
   # - ../../../base/stable/gameservers/conan-exiles/
   - ../../../base/stable/gameservers/terraria/farfaraway/
   - ../../../base/stable/gameservers/minecraft/vanilla/
-  - ../../../base/stable/gameservers/minecraft/rlcraft/
   - ../../../base/stable/uptime-kuma/
 
   # secrets
