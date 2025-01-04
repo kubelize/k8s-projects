@@ -9,8 +9,6 @@ spec:
   selector:
     matchLabels:
       app: debian-modify-pvc
-  destination:
-    namespace: minecraft
   template:
     metadata:
       labels:
