@@ -13,6 +13,7 @@ resources:
   # - ../../../base/stable/gameservers/conan-exiles/
   - ../../../base/stable/gameservers/minecraft/vanilla/
   - ../../../base/stable/uptime-kuma/
+  - ../../../base/stable/gameservers/minecraft/rlcraft/
 
   # secrets
   - secrets/
@@ -26,3 +27,7 @@ patches:
     target:
       kind: Application
       name: vanilla-minecraft
+  - path: ./patches/rlcraft-minecraft.yaml
+    target:
+      kind: Application
+      name: rlcraft-minecraft
