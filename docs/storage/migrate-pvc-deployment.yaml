@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: debian-modify-pvc
+  name: debian-migrate-pvc
   labels:
-    app: debian-modify-pvc
+    app: debian-migrate-pvc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: debian-modify-pvc
+      app: debian-migrate-pvc
   template:
     metadata:
       labels:
-        app: debian-modify-pvc
+        app: debian-migrate-pvc
     spec:
       containers:
       - name: debian
@@ -24,6 +24,9 @@ spec:
         - name: new-pvc
           mountPath: /data/old
       volumes:
-      - name: pvc-volume
+      - name: old-pvc
         persistentVolumeClaim:
-          claimName: terraria-farfaraway-data # Name of your existing PVC
+          claimName: rlcraft-minecraft-minecraft-datadir # Name of your existing PVC you want to migrate
+      - name: new-pvc
+        persistentVolumeClaim:
+          claimName: old-pvc # Target pvcs name
