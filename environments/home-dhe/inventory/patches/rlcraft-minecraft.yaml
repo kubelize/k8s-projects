@@ -10,17 +10,17 @@ spec:
           serviceAnnotations:
             "lbipam.cilium.io/ips": "10.130.5.237"
           motd: §b💀
-          maxTickTime: 60000
+          maxTickTime: -1
           difficulty: hard
           whitelist: McKency, icykhaye, ispolell, NekoCho, CellCraft, premiumching
           icon: "https://raw.githubusercontent.com/kubelize/kube-projects/refs/heads/dev/environments/home-mck/inventory/src/assets/minecraft-rlcraft-icon.png"
           maxPlayers: 10
           autoCurseForge:
             includeMods:
-              - "5987126"
-              - "3672570"
-              - "3425511"
-              - "5998289"
+              - "5987126" # https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map/files/5987126
+              - "3672570" # https://www.curseforge.com/minecraft/mc-mods/darknesslib/files/3672570
+              - "3425511" # https://www.curseforge.com/minecraft/mc-mods/grue/files/3425511
+              - "5998289" # https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat/files/5998289
 
           
 
