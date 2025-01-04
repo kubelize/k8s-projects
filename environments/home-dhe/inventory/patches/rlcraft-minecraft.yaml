@@ -16,8 +16,8 @@ spec:
           icon: "https://raw.githubusercontent.com/kubelize/kube-projects/refs/heads/dev/environments/home-mck/inventory/src/assets/minecraft-rlcraft-icon.png"
           maxPlayers: 10
           autoCurseForge:
-            includeMods:
-              - https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map
+            includeMods: []
+              # - https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map
               # - 349174 # https://www.curseforge.com/minecraft/mc-mods/darknesslib/files/3672570
               # - "grue" # https://www.curseforge.com/minecraft/mc-mods/grue/files/3425511
               # - 416089 # https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat/files/5998289
