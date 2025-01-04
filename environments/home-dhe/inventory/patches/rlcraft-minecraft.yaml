@@ -17,7 +17,7 @@ spec:
           maxPlayers: 10
           autoCurseForge:
             includeMods:
-              - "317780" # https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map/files/5987126
-              - "349174" # https://www.curseforge.com/minecraft/mc-mods/darknesslib/files/3672570
-              - "235133" # https://www.curseforge.com/minecraft/mc-mods/grue/files/3425511
-              - "416089" # https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat/files/5998289
+              - 317780 # https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map/files/5987126
+              - 349174 # https://www.curseforge.com/minecraft/mc-mods/darknesslib/files/3672570
+              - 235133 # https://www.curseforge.com/minecraft/mc-mods/grue/files/3425511
+              - 416089 # https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat/files/5998289
