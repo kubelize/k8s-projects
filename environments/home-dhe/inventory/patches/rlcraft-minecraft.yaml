@@ -17,5 +17,4 @@ spec:
           maxPlayers: 10
           autoCurseForge:
             includeMods:
-              - projectID: 227083
-                fileID: 3795316
+              - 227083:3795316
