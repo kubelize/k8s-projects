@@ -15,6 +15,12 @@ spec:
           whitelist: McKency, icykhaye, ispolell, NekoCho, CellCraft, premiumching
           icon: "https://raw.githubusercontent.com/kubelize/kube-projects/refs/heads/dev/environments/home-mck/inventory/src/assets/minecraft-rlcraft-icon.png"
           maxPlayers: 10
+          autoCurseForge:
+            includeMods:
+              - "https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map"
+              - "https://www.curseforge.com/minecraft/mc-mods/grue"
+              - "https://www.curseforge.com/minecraft/mc-mods/darknesslib"
+              - "https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat"
 
           
 
