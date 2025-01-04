@@ -26,7 +26,7 @@ spec:
           repository: itzg/minecraft-server
           tag: java8-jdk
           pullPolicy: IfNotPresent
-        replicaCount: 0
+        replicaCount: 1
         resources:
             requests:
               memory: 4Gi
