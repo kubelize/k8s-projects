@@ -29,6 +29,8 @@ spec:
                 port: 24454
                 protocol: UDP
                 targetPort: 24454
+              ingress:
+                enabled: false
         serviceAnnotations:
           "lbipam.cilium.io/ips": "192.168.1.233"
           
