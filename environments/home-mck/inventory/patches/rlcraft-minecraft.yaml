@@ -23,11 +23,12 @@ spec:
             overridesSkipExisting: true
           extraPorts:
             - name: voipport
+              containerPort: 24454
+              protocol: UDP
               service:
                 enabled: true
                 embedded: true
                 port: 24454
-                protocol: UDP
                 targetPort: 24454
               ingress:
                 enabled: false
