@@ -21,6 +21,13 @@ spec:
            - https://mediafilez.forgecdn.net/files/5998/289/voicechat-forge-1.12.2-2.5.27.jar
           autoCurseForge:
             overridesSkipExisting: true
+          extraPorts:
+            - name: voipport
+              enabled: true
+              embedded: true
+              port: 24454
+              protocol: UDP
+              targetPort: 24454
         serviceAnnotations:
           "lbipam.cilium.io/ips": "192.168.1.233"
           
