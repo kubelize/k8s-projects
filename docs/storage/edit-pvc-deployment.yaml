@@ -21,9 +21,6 @@ spec:
         volumeMounts:
         - name: old-pvc
           mountPath: /data/old
-        - name: new-pvc
-          mountPath: /data/old
-      volumes:
       - name: pvc-volume
         persistentVolumeClaim:
           claimName: terraria-farfaraway-data # Name of your existing PVC

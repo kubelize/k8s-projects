@@ -18,5 +18,7 @@ spec:
           #  - https://mediafilez.forgecdn.net/files/3672/570/DarknessLib-1.12.2-1.1.2.jar
           #  - https://mediafilez.forgecdn.net/files/3425/511/Grue-1.12.2-1.8.1.jar
           #  - https://mediafilez.forgecdn.net/files/5998/289/voicechat-forge-1.12.2-2.5.27.jar
+          autoCurseForge:
+            overridesSkipExisting: true
         serviceAnnotations:
           "lbipam.cilium.io/ips": "10.130.5.237"
