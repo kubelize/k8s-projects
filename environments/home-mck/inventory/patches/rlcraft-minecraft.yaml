@@ -23,11 +23,12 @@ spec:
             overridesSkipExisting: true
           extraPorts:
             - name: voipport
-              enabled: true
-              embedded: true
-              port: 24454
-              protocol: UDP
-              targetPort: 24454
+              service:
+                enabled: true
+                embedded: true
+                port: 24454
+                protocol: UDP
+                targetPort: 24454
         serviceAnnotations:
           "lbipam.cilium.io/ips": "192.168.1.233"
           
