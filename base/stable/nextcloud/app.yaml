@@ -65,19 +65,20 @@ spec:
             runAsGroup: 33
             runAsNonRoot: true
             readOnlyRootFilesystem: false
-          extraVolumes:
-            - name: php-config
-              emptyDir: {}
-          extraMounts:
-            - name: php-config
-              mountPath: /usr/local/etc/php/conf.d
-          extraInitContainers:
-            - name: init-permissions
-              image: busybox
-              command: ["sh", "-c", "mkdir -p /usr/local/etc/php/conf.d && chown -R 33:33 /usr/local/etc/php/conf.d && echo 'Permission 33:33 set for redis-session.ini' && chmod 777 /usr/local/etc/php/conf.d"]
-              volumeMounts:
-              - name: php-config
-                mountPath: /usr/local/etc/php/conf.d
+            fsGroup: 33 
+          # extraVolumes:
+          #   - name: php-config
+          #     emptyDir: {}
+          # extraMounts:
+          #   - name: php-config
+          #     mountPath: /usr/local/etc/php/conf.d
+          # extraInitContainers:
+          #   - name: init-permissions
+          #     image: busybox
+          #     command: ["sh", "-c", "mkdir -p /usr/local/etc/php/conf.d && chown -R 33:33 /usr/local/etc/php/conf.d && echo 'Permission 33:33 set for redis-session.ini' && chmod 777 /usr/local/etc/php/conf.d"]
+          #     volumeMounts:
+          #     - name: php-config
+          #       mountPath: /usr/local/etc/php/conf.d
         externalDatabase:
           enabled: true
           type: mysql
