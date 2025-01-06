@@ -64,15 +64,15 @@ spec:
             runAsGroup: 33
             runAsNonRoot: true
             readOnlyRootFilesystem: false
-          externalDatabase:
+        externalDatabase:
+          enabled: true
+          type: mysql
+          database: nextcloud
+          existingSecret:
             enabled: true
-            type: mysql
-            database: nextcloud
-            existingSecret:
-              enabled: true
-              secretName: "nextcloud-mariadb-auth"
-              usernameKey: mariadb-username
-              passwordKey: mariadb-password
+            secretName: "nextcloud-mariadb-auth"
+            usernameKey: mariadb-username
+            passwordKey: mariadb-password
         mariadb:
           enabled: true
           auth:
