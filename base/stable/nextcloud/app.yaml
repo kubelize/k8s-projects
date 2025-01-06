@@ -75,6 +75,7 @@ spec:
               passwordKey: mariadb-password
         mariadb:
           enabled: true
+          auth:
             existingSecret: "nextcloud-mariadb-auth"
           primary:
             persistence:
