@@ -69,7 +69,6 @@ spec:
             - name: init-permissions
               image: busybox
               command: ["sh", "-c", "chown -R 33:33 /usr/local/etc/php/conf.d"]
-              name: redis-session
         externalDatabase:
           enabled: true
           type: mysql
