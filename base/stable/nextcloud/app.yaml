@@ -60,11 +60,11 @@ spec:
         nextcloud:
           username: admin
           password: initial-access-1234!
-          # securityContext:
-          #   runAsUser: 33
-          #   runAsGroup: 33
-          #   runAsNonRoot: true
-          #   readOnlyRootFilesystem: false
+          securityContext:
+            runAsUser: 33
+            runAsGroup: 33
+            runAsNonRoot: true
+            readOnlyRootFilesystem: false
         externalDatabase:
           enabled: true
           type: mysql
