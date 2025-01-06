@@ -68,7 +68,7 @@ spec:
           extraInitContainers:
             - name: init-permissions
               image: busybox
-              command: ["sh", "-c", "mkdir -p /usr/local/etc/php/conf.d && chown -R 33:33 /usr/local/etc/php/conf.d"]
+              command: ["sh", "-c", "mkdir -p /usr/local/etc/php/conf.d && chown -R 33:33 /usr/local/etc/php/conf.d && echo "Permission 33:33 set for redis-session.ini"]
         externalDatabase:
           enabled: true
           type: mysql
