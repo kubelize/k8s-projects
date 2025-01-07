@@ -77,6 +77,7 @@ spec:
           nextcloud:
             username: admin
             password: initial-access-1234!
+            containerPort: 8080
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
