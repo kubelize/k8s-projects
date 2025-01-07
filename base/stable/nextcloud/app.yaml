@@ -25,6 +25,8 @@ spec:
       helm:
         parameters: []
         valuesObject:
+          image:
+            tag: 30.0.4-apache
           ingress:
             enabled: true
             className: nginx
@@ -63,8 +65,6 @@ spec:
           nextcloud:
             username: admin
             password: initial-access-1234!
-            defaultConfigs:
-              redis.config.php: false
             securityContext:
               runAsUser: 33
               runAsGroup: 33
@@ -91,6 +91,7 @@ spec:
               passwordKey: mariadb-password
           mariadb:
             enabled: true
+            image: 11.3.2-debian-12-r5
             auth:
               existingSecret: "nextcloud-mariadb-auth"
             primary:
@@ -98,6 +99,7 @@ spec:
                 enabled: true
           redis:
             enabled: true
+            image: 7.2.5-debian-12-r4
             auth:
               enabled: true
               existingSecret: "nextcloud-redis-auth"
