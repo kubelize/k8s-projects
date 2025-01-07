@@ -27,8 +27,8 @@ spec:
         valuesObject:
           image:
             flavour: 
-            repository: nextcloud
-            tag: 30.0.4-fpm-alpine
+            repository: kubelize/nextcloud
+            tag: 0.1.2
           ingress:
             enabled: true
             className: nginx
@@ -80,9 +80,9 @@ spec:
               custom.config.php: |
                 <?php
                   $CONFIG = array(
-                    "check_data_directory_permissions"=> false, # fix data directory permissions error
+                    "check_data_directory_permissions"=> false,
                     "trusted_domains" => array (
-                      $_ENV["NEXTCLOUD_TRUSTED_DOMAINS"], # fix probes 400 error
+                      $_ENV["NEXTCLOUD_TRUSTED_DOMAINS"],
                     ),
                   );
             username: admin
