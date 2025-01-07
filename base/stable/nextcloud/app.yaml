@@ -67,7 +67,7 @@ spec:
           nginx:
             enabled: true
             image:
-              repository: nginx/nginx-unprivileged
+              repository: nginxinc/nginx-unprivileged
               tag: alpine3.20
             securityContext:
               runAsUser: 82
