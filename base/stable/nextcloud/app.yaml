@@ -69,12 +69,22 @@ spec:
             image:
               repository: nginxinc/nginx-unprivileged
               tag: alpine3.20
+            containerPort: 8080
             securityContext:
               runAsUser: 82
               runAsGroup: 33
               runAsNonRoot: true
               readOnlyRootFilesystem: false
           nextcloud:
+            configs:
+              custom.config.php: |
+                <?php
+                  $CONFIG = array(
+                    "check_data_directory_permissions"=> false, # fix data directory permissions error
+                    "trusted_domains" => array (
+                      $_ENV["NEXTCLOUD_TRUSTED_DOMAINS"], # fix probes 400 error
+                    ),
+                  );
             username: admin
             password: initial-access-1234!
             containerPort: 8080
