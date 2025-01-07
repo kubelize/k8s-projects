@@ -97,6 +97,8 @@ spec:
             username: admin
             password: initial-access-1234!
             containerPort: 8080
+            podSecurityContext:
+              fsGroup: 33
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
