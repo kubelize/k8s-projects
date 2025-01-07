@@ -12,5 +12,6 @@
   value: 10Gi
 - op: add
   path: "/spec/sources/1/helm/valuesObject/persistence/size"
-  value: 10Gi
+  value: 
+    10Gi
 
