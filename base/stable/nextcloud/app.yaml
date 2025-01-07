@@ -26,8 +26,9 @@ spec:
         parameters: []
         valuesObject:
           image:
-            repository: kubelize/nextcloud
-            tag: 0.1.1
+            flavour: 
+            repository: nextcloud
+            tag: 30.0.4-fpm-alpine
           ingress:
             enabled: true
             className: nginx
@@ -63,17 +64,39 @@ spec:
               - secretName: nextcloud-tls
                 hosts:
                   - nextcloud.kube.home
+          nginx:
+            enabled: true
+            image:
+              repository: nginx
+              tag: 1.27.3-alpine
+            securityContext:
+              runAsUser: 82
+              runAsGroup: 33
+              runAsNonRoot: true
+              readOnlyRootFilesystem: false
+            config:
+              # This generates the default nginx config as per the nextcloud documentation
+              default: false
+              custom: |-
+                server {
+                  listen       8080;
+                  server_name  localhost;
+
+                  root   /usr/share/nginx/html;
+                  port_in_redirect off;
+                  location / {
+                      try_files $uri $uri/ /index.html =404;
+                      proxy_set_header X-Real-IP  $remote_addr;
+                      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                      proxy_set_header X-Forwarded-Proto https;
+                      proxy_set_header X-Forwarded-Port 443;
+                      proxy_set_header Host $host:$server_port;
+                  }
+                }
           nextcloud:
             username: admin
             password: initial-access-1234!
             containerPort: 8080
-            securityContext:
-              runAsUser: 33
-              runAsGroup: 33
-              runAsNonRoot: true
-              readOnlyRootFilesystem: false
-            podSecurityContext: 
-              fsGroup: 33
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
@@ -81,7 +104,7 @@ spec:
                   defaultMode: 0550
             extraVolumeMounts:
               - name: before-starting-scripts
-                mountPath: /docker-entrypoint-hooks.d/before-starting.d
+                mountPath: /docker-entrypoint-hooks.d/pre-installation
           externalDatabase:
             enabled: true
             type: mysql
@@ -110,4 +133,3 @@ spec:
               existingSecretPasswordKey: "redis-password"
           persisitence:
             enabled: false
-
