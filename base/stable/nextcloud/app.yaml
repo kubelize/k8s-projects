@@ -106,7 +106,8 @@ spec:
                   defaultMode: 0550
             extraVolumeMounts:
               - name: before-starting-scripts
-                mountPath: /docker-entrypoint-hooks.d/pre-installation
+                mountPath: /docker-entrypoint-hooks.d/before-starting/install-apps.sh
+                subPath: install-apps.sh
           externalDatabase:
             enabled: true
             type: mysql
