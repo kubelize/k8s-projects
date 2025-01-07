@@ -68,13 +68,13 @@ spec:
             username: admin
             password: initial-access-1234!
             containerPort: 9000
-            securityContext:
-              runAsUser: 82
-              runAsGroup: 33
-              runAsNonRoot: true
-              readOnlyRootFilesystem: false
-            podSecurityContext:
-              fsGroup: 33
+            # securityContext:
+            #   runAsUser: 82
+            #   runAsGroup: 33
+            #   runAsNonRoot: true
+            #   readOnlyRootFilesystem: false
+            # podSecurityContext:
+            #   fsGroup: 33
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
