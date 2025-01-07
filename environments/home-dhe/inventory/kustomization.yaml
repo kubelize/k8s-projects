@@ -8,7 +8,7 @@ resources:
   - ../../../base/incubator/vaultwarden/
 
   # stable
-  # - ../../../base/stable/nextcloud/
+  - ../../../base/stable/nextcloud/
   # - ../../../base/stable/gameservers/sdtd/
   # - ../../../base/stable/gameservers/conan-exiles/
   - ../../../base/stable/gameservers/minecraft/vanilla/
@@ -26,7 +26,7 @@ patches:
     target:
       kind: Application
       name: vanilla-minecraft
-  # - path: ./patches/nextcloud.yaml
-  #   target:
-  #     kind: Application
-  #     name: nextcloud
+  - path: ./patches/nextcloud-values.yaml
+    target:
+      kind: Application
+      name: nextcloud

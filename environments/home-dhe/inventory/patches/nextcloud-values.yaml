@@ -1,0 +1,22 @@
+- op: add
+  path: "/spec/sources/1/helm/valuesObject/ingress"
+  value:
+    tls:
+      - secretName: nextcloud-tls
+        hosts:
+          - drive.kubelize.com
+- op: add
+  path: "/spec/sources/1/helm/valuesObject/nextcloud"
+  value:
+    host: drive.kubelize.com
+- op: add
+  path: "/spec/sources/1/helm/valuesObject/mariadb"
+  value:
+    primary:
+      persistence:
+        size: 10Gi
+- op: add
+  path: "/spec/sources/1/helm/valuesObject/persistence"
+  value:
+    size:
+      10Gi
