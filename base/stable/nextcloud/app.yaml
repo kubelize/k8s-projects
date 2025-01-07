@@ -105,4 +105,7 @@ spec:
               enabled: true
               existingSecret: "nextcloud-redis-auth"
               existingSecretPasswordKey: "redis-password"
+          persisitence:
+            enabled: true
+            size: []
 
