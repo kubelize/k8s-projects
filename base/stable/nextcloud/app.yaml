@@ -26,7 +26,8 @@ spec:
         parameters: []
         valuesObject:
           image:
-            tag: 30.0.4-apache
+            repository: kubelize/nextcloud
+            tag: 0.1.0
           ingress:
             enabled: true
             className: nginx
