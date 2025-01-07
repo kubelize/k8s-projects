@@ -78,7 +78,6 @@ spec:
               # This generates the default nginx config as per the nextcloud documentation
               default: false
               custom: |-
-                worker_processes auto;  # Global context, before the http block
                 error_log /var/log/nginx/error.log warn;
                 pid /var/run/nginx.pid;
 
