@@ -76,7 +76,7 @@ spec:
               readOnlyRootFilesystem: false
             config:
               # This generates the default nginx config as per the nextcloud documentation
-              default: true
+              default: false
               custom: |-
                 upstream php-handler {
                     server 127.0.0.1:9000;
