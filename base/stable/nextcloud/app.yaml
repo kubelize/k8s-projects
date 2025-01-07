@@ -79,18 +79,19 @@ spec:
               default: false
               custom: |-
                 server {
-                    listen 8080;
-                    server_name localhost;
+                  listen       8080;
+                  server_name  localhost;
 
-                    location / {
-                        proxy_pass http://$NEXTCLOUD_SERVICE_HOST:$NEXTCLOUD_SERVICE_PORT;  # Proxy to Nextcloud
-                        proxy_set_header X-Real-IP $remote_addr;
-                        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                        proxy_set_header X-Forwarded-Proto https;
-                        proxy_set_header X-Forwarded-Port 443;
-                        proxy_set_header Host $host;
-                        proxy_redirect off;  # Disable changing URLs in headers to the backend
-                    }
+                  root   /usr/share/nginx/html;
+                  port_in_redirect off;
+                  location / {
+                      try_files $uri $uri/ /index.html =404;
+                      proxy_set_header X-Real-IP  $remote_addr;
+                      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                      proxy_set_header X-Forwarded-Proto https;
+                      proxy_set_header X-Forwarded-Port 443;
+                      proxy_set_header Host $host:$server_port;
+                  }
                 }
           nextcloud:
             username: admin
