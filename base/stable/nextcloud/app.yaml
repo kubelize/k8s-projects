@@ -27,7 +27,7 @@ spec:
         valuesObject:
           image:
             repository: kubelize/nextcloud
-            tag: 0.1.0
+            tag: 0.1.1
           ingress:
             enabled: true
             className: nginx
@@ -67,12 +67,12 @@ spec:
             username: admin
             password: initial-access-1234!
             securityContext:
-              runAsUser: 65534
-              runAsGroup: 65534
+              runAsUser: 33
+              runAsGroup: 33
               runAsNonRoot: true
               readOnlyRootFilesystem: false
             podSecurityContext: 
-              fsGroup: 65534
+              fsGroup: 33
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
@@ -80,7 +80,7 @@ spec:
                   defaultMode: 0550
             extraVolumeMounts:
               - name: before-starting-scripts
-                mountPath: /docker-entrypoint-hooks.d/before-starting.d
+                mountPath: /docker-entrypoint-hooks.d/pre-installation
           externalDatabase:
             enabled: true
             type: mysql
