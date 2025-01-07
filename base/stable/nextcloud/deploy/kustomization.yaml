@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
  - nextcloud-mariadb-auth.yaml
  - nextcloud-redis-auth.yaml
+ - before-starting-scripts-configmap.yaml
