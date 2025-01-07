@@ -67,43 +67,45 @@ spec:
           nginx:
             enabled: true
             image:
-              repository: nginxinc/nginx-unprivileged
-              tag: alpine3.20
-            securityContext:
-              runAsUser: 82
-              runAsGroup: 33
-              runAsNonRoot: true
-              readOnlyRootFilesystem: false
+              repository: nginx
+              tag: 1.21.3-alpine
+              # repository: nginxinc/nginx-unprivileged
+              # tag: alpine3.20
+            # securityContext:
+            #   runAsUser: 82
+            #   runAsGroup: 33
+            #   runAsNonRoot: true
+            #   readOnlyRootFilesystem: false
             config:
               # This generates the default nginx config as per the nextcloud documentation
-              default: false
-              custom: |-
-                server {
-                  listen       8080;
-                  server_name  localhost;
+              default: true
+              # custom: |-
+              #   server {
+              #     listen       8080;
+              #     server_name  localhost;
 
-                  root   /usr/share/nginx/html;
-                  port_in_redirect off;
-                  location / {
-                      try_files $uri $uri/ /index.html =404;
-                      proxy_set_header X-Real-IP  $remote_addr;
-                      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                      proxy_set_header X-Forwarded-Proto https;
-                      proxy_set_header X-Forwarded-Port 443;
-                      proxy_set_header Host $host:$server_port;
-                  }
-                }
+              #     root   /usr/share/nginx/html;
+              #     port_in_redirect off;
+              #     location / {
+              #         try_files $uri $uri/ /index.html =404;
+              #         proxy_set_header X-Real-IP  $remote_addr;
+              #         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              #         proxy_set_header X-Forwarded-Proto https;
+              #         proxy_set_header X-Forwarded-Port 443;
+              #         proxy_set_header Host $host:$server_port;
+              #     }
+              #   }
           nextcloud:
             username: admin
             password: initial-access-1234!
-            containerPort: 8080
-            securityContext:
-              runAsUser: 82
-              runAsGroup: 33
-              runAsNonRoot: true
-              readOnlyRootFilesystem: false
-            podSecurityContext:
-              fsGroup: 33
+            containerPort: 80
+            # securityContext:
+            #   runAsUser: 82
+            #   runAsGroup: 33
+            #   runAsNonRoot: true
+            #   readOnlyRootFilesystem: false
+            # podSecurityContext:
+            #   fsGroup: 33
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
