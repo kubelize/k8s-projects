@@ -68,7 +68,7 @@ spec:
             enabled: true
             image:
               repository: nginx
-              tag: 1.27.3-apline
+              tag: 1.27.3-alpine
             securityContext:
               runAsUser: 82
               runAsGroup: 33
