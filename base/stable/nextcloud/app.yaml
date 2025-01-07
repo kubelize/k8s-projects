@@ -91,7 +91,8 @@ spec:
               passwordKey: mariadb-password
           mariadb:
             enabled: true
-            image: 11.3.2-debian-12-r5
+            image: 
+              tag: 11.3.2-debian-12-r5
             auth:
               existingSecret: "nextcloud-mariadb-auth"
             primary:
@@ -99,7 +100,8 @@ spec:
                 enabled: true
           redis:
             enabled: true
-            image: 7.2.5-debian-12-r4
+            image: 
+              tag: 7.2.5-debian-12-r4
             auth:
               enabled: true
               existingSecret: "nextcloud-redis-auth"
