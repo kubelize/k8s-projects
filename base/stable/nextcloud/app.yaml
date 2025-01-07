@@ -75,15 +75,28 @@ spec:
               readOnlyRootFilesystem: false
             podSecurityContext:
               fsGroup: 33
+            extraInitContainers:
+              - name: init-permissions
+                image: busybox
+                command: ['sh', '-c', 'mkdir -p /usr/local/etc/php/conf.d && chmod 0770 /usr/local/etc/php/conf.d']
+                volumeMounts:
+                  - name: redis-session
+                    mountPath: /usr/local/etc/php/conf.d
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
                   name: before-starting-scripts
                   defaultMode: 0550
+              - name: redis-session
+                emptyDir: {}
+                defaultMode: 0770
             extraVolumeMounts:
               - name: before-starting-scripts
                 mountPath: /docker-entrypoint-hooks.d/before-starting/install-apps.sh
                 subPath: install-apps.sh
+              - name: redis-session
+                mountPath: /usr/local/etc/php/conf.d/redis-session.ini
+                subPath: redis-session.ini
           externalDatabase:
             enabled: true
             type: mysql
