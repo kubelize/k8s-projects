@@ -72,7 +72,6 @@ spec:
             securityContext:
               runAsUser: 82
               runAsGroup: 33
-              runAsNonRoot: true
               readOnlyRootFilesystem: false
           nextcloud:
             username: admin
