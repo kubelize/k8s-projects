@@ -63,6 +63,8 @@ spec:
           nextcloud:
             username: admin
             password: initial-access-1234!
+            defaultConfigs:
+              redis.config.php: false
             securityContext:
               runAsUser: 33
               runAsGroup: 33
