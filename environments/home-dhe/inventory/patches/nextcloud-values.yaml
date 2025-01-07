@@ -11,7 +11,9 @@
   path: "/spec/sources/1/helm/valuesObject/mariadb/primary/persistence/size"
   value: 10Gi
 - op: add
-  path: "/spec/sources/1/helm/valuesObject/persistence/size"
+  path: "/spec/sources/1/helm/valuesObject/persistence"
   value: 
-    10Gi
+    enabled: true
+    size:
+      10Gi
 
