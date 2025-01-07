@@ -73,7 +73,7 @@ spec:
               runAsUser: 82
               runAsGroup: 33
               runAsNonRoot: true
-              readOnlyRootFilesystem: true
+              readOnlyRootFilesystem: false
           nextcloud:
             username: admin
             password: initial-access-1234!
