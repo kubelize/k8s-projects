@@ -27,7 +27,7 @@ spec:
         valuesObject:
           image:
             repository: kubelize/nextcloud
-            tag: 30.0.4-apache
+            tag: 0.1.1
           ingress:
             enabled: true
             className: nginx
