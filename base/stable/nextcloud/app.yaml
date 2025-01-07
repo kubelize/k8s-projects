@@ -78,10 +78,11 @@ spec:
             extraInitContainers:
               - name: init-permissions
                 image: busybox
-                command: ['sh', '-c', 'mkdir -p /usr/local/etc/php/conf.d && chmod 0770 /usr/local/etc/php/conf.d']
+                command: ['sh', '-c', 'chmod 0770 /usr/local/etc/php/conf.d/redis-session.ini']
                 volumeMounts:
                   - name: redis-session
-                    mountPath: /usr/local/etc/php/conf.d
+                    mountPath: /usr/local/etc/php/conf.d/redis-session.ini
+                    subPath: redis-session.ini
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
