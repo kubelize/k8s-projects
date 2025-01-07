@@ -73,8 +73,8 @@ spec:
             #   runAsGroup: 33
             #   runAsNonRoot: true
             #   readOnlyRootFilesystem: false
-            # podSecurityContext:
-            #   fsGroup: 33
+            podSecurityContext:
+              fsGroup: 33
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
