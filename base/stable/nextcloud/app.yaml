@@ -105,7 +105,7 @@ spec:
                     }
 
                     server {
-                        listen 80;
+                        listen 8080;
 
                         add_header Referrer-Policy "no-referrer" always;
                         add_header X-Content-Type-Options "nosniff" always;
