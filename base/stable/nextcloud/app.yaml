@@ -66,6 +66,7 @@ spec:
           nextcloud:
             username: admin
             password: initial-access-1234!
+            containerPort: 8080
             securityContext:
               runAsUser: 33
               runAsGroup: 33
