@@ -27,8 +27,8 @@ spec:
         valuesObject:
           image:
             flavour: 
-            repository: nextcloud
-            tag: 30.0.4-fpm-alpine
+            repository: kubelize/nextcloud
+            tag: 0.1.2
           ingress:
             enabled: true
             className: nginx
@@ -75,14 +75,6 @@ spec:
               readOnlyRootFilesystem: false
             podSecurityContext:
               fsGroup: 33
-            extraInitContainers:
-              - name: init-permissions
-                image: busybox
-                command: ['sh', '-c', 'chmod 0770 /usr/local/etc/php/conf.d/redis-session.ini']
-                volumeMounts:
-                  - name: redis-session
-                    mountPath: /usr/local/etc/php/conf.d/redis-session.ini
-                    subPath: redis-session.ini
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
@@ -95,9 +87,6 @@ spec:
               - name: before-starting-scripts
                 mountPath: /docker-entrypoint-hooks.d/before-starting/install-apps.sh
                 subPath: install-apps.sh
-              - name: redis-session
-                mountPath: /usr/local/etc/php/conf.d/redis-session.ini
-                subPath: redis-session.ini
           externalDatabase:
             enabled: true
             type: mysql
