@@ -63,7 +63,7 @@ spec:
             tls:
               - secretName: nextcloud-tls
                 hosts:
-                  - drive.kubkubelize.com
+                  - nextcloud.kube.home
           nginx:
             enabled: true
             image:

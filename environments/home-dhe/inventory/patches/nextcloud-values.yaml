@@ -1,4 +1,4 @@
-- op: add
+- op: replace
   path: "/spec/sources/1/helm/valuesObject/ingress/tls"
   value:
     - secretName: nextcloud-tls
@@ -9,11 +9,11 @@
   value: drive.kubelize.com
 - op: add
   path: "/spec/sources/1/helm/valuesObject/mariadb/primary/persistence/size"
-  value: 10Gi
+  value: 5Gi
 - op: add
   path: "/spec/sources/1/helm/valuesObject/persistence"
   value: 
     enabled: true
     size:
-      10Gi
+      500Gi
 
