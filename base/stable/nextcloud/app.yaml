@@ -67,10 +67,11 @@ spec:
           nginx:
             enabled: true
             image:
-              repository: nginx
-              tag: 1.27.3-alpine
+              repository: nginxinc/nginx-unprivileged
+              tag: alpine3.20
+            containerPort: 8080
             securityContext:
-              runAsUser: 82
+              runAsUser: 101
               runAsGroup: 33
               readOnlyRootFilesystem: false
           nextcloud:
