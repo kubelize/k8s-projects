@@ -29,6 +29,9 @@ spec:
             flavour: 
             repository: kubelize/nextcloud
             tag: 0.1.2
+          phpClientHttpsFix:
+            enabled: true
+            protocol: https
           ingress:
             enabled: true
             className: nginx
