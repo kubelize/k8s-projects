@@ -18,3 +18,15 @@ kubeseal --format=yaml \
   --cert=/home/mck/kube-builder/apps/addons/sealed-secrets/home-mck/pub-home-mck-sealed-secrets.pem \
   --secret-file /home/mck/kube-projects/environments/home-mck/inventory/secrets/rcon-secret.yaml \
   --sealed-secret-file /home/mck/kube-projects/environments/home-mck/inventory/secrets/web-rcon-config.yaml
+
+# nextcloud-mariadb
+kubeseal --format=yaml \
+  --cert=/home/dan/Git/kubelize/kube-builder/apps/addons/sealed-secrets/home-dhe/pub-home-dhe-sealed-secrets.pem \
+  --secret-file /home/dan/Git/kubelize/kube-projects/environments/home-mck/inventory/secrets/nextcloud-mariadb-secret.yaml \
+  --sealed-secret-file /home/dan/Git/kubelize/kube-projects/environments/home-mck/inventory/secrets/nextcloud-mariadb-auth.yaml
+
+# nextcloud-redis
+kubeseal --format=yaml \
+  --cert=/home/dan/Git/kubelize/kube-builder/apps/addons/sealed-secrets/home-dhe/pub-home-dhe-sealed-secrets.pem \
+  --secret-file /home/dan/Git/kubelize/kube-projects/environments/home-mck/inventory/secrets/nextcloud-redis-secret.yaml \
+  --sealed-secret-file /home/dan/Git/kubelize/kube-projects/environments/home-mck/inventory/secrets/nextcloud-redis-auth.yaml

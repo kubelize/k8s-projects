@@ -13,9 +13,7 @@ resources:
 - ../../../base/stable/uptime-kuma/
 
 # secrets
-- secrets/minecraft-rcon-password.yaml
-- secrets/cf-api-token.yaml
-- secrets/web-rcon-config.yaml
+- secrets/
 
 patches:
   - path: ./patches/vanilla-minecraft.yaml
