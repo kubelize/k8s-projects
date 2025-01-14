@@ -128,7 +128,7 @@ spec:
             auth:
               existingSecret: "nextcloud-mariadb-auth"
             primary:
-              resourcePreset: "small"
+              resourcesPreset: "small"
               persistence:
                 enabled: true
           # https://github.com/bitnami/charts/tree/main/bitnami/redis
@@ -141,12 +141,12 @@ spec:
               existingSecret: "nextcloud-redis-auth"
               existingSecretPasswordKey: "redis-password"
             master:
-              resourcePreset: "micro"
+              resourcesPreset: "micro"
               persistence:
                 enabled: true
                 size: 1Gi
             replica:
-              resourcePreset: "micro"
+              resourcesPreset: "micro"
               persistence:
                 enabled: true
                 size: 1Gi
