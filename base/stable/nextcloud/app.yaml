@@ -120,6 +120,7 @@ spec:
               secretName: "nextcloud-mariadb-auth"
               usernameKey: mariadb-username
               passwordKey: mariadb-password
+          # https://github.com/bitnami/charts/tree/main/bitnami/mariadb
           mariadb:
             enabled: true
             image: 
@@ -127,8 +128,10 @@ spec:
             auth:
               existingSecret: "nextcloud-mariadb-auth"
             primary:
+              resourcePreset: "small"
               persistence:
                 enabled: true
+          # https://github.com/bitnami/charts/tree/main/bitnami/redis
           redis:
             enabled: true
             image: 
@@ -138,10 +141,12 @@ spec:
               existingSecret: "nextcloud-redis-auth"
               existingSecretPasswordKey: "redis-password"
             master:
+              resourcePreset: "micro"
               persistence:
                 enabled: true
                 size: 1Gi
             replica:
+              resourcePreset: "micro"
               persistence:
                 enabled: true
                 size: 1Gi
