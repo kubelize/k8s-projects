@@ -88,9 +88,37 @@ spec:
                       $_ENV["NEXTCLOUD_TRUSTED_DOMAINS"],
                     ),
                   );
+              previews.config.php: |-
+                <?php
+                $CONFIG = array (
+                  'enable_previews' => true,
+                  'enabledPreviewProviders' => array (
+                    'OC\Preview\Movie',
+                    'OC\Preview\PNG',
+                    'OC\Preview\JPEG',
+                    'OC\Preview\GIF',
+                    'OC\Preview\BMP',
+                    'OC\Preview\XBitmap',
+                    'OC\Preview\MP3',
+                    'OC\Preview\MP4',
+                    'OC\Preview\TXT',
+                    'OC\Preview\MarkDown',
+                    'OC\Preview\PDF'
+                  ),
+                );
             phpConfigs:
               zz-php_upload_size.ini: |
                 upload_max_filesize=10G
+            extraEnv:
+              - name: PHP_MEMORY_LIMIT
+                value: "1024M"
+              - name: PHP_UPLOAD_LIMIT
+                value: "10240M"
+            defaultConfigs:
+              apache-pretty-urls.config.php: false
+              s3.config.php: false
+              smtp.config.php: true
+              swift.config.php: false
             username: admin
             password: initial-access-1234!
             containerPort: 8080
