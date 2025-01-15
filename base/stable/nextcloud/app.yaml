@@ -136,6 +136,13 @@ spec:
               s3.config.php: false
               smtp.config.php: true
               swift.config.php: false
+            phpConfigs:
+              zz-pm_children.ini: |-
+                pm=dynamic
+                pm.max_children=120
+                pm.start_servers=12
+                pm.min_spare_servers=6
+                pm.max_spare_servers=18
             username: admin
             password: initial-access-1234!
             containerPort: 8080
