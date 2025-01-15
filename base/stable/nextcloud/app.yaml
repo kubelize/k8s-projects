@@ -88,6 +88,10 @@ spec:
                       $_ENV["NEXTCLOUD_TRUSTED_DOMAINS"],
                     ),
                   );
+            phpConfigs:
+              zz-php_upload_size.ini: |
+                upload_max_filesize = 10G
+                post_max_size = 10G
             username: admin
             password: initial-access-1234!
             containerPort: 8080
