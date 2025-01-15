@@ -89,7 +89,7 @@ spec:
                     ),
                   );
             phpConfigs:
-              zz-php_upload_size.ini: |
+              zz-php_upload_size.ini: |-
                 upload_max_filesize = 10G
                 post_max_size = 10G
             username: admin
