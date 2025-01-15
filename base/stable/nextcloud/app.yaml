@@ -111,6 +111,8 @@ spec:
                 subPath: install-apps.sh
               - name: nginx-cache
                 mountPath: "/var/cache/nginx"
+          internalDatabase:
+            enabled: false
           externalDatabase:
             enabled: true
             type: mysql
