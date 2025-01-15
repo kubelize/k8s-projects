@@ -36,7 +36,16 @@ spec:
             enabled: true
             className: nginx
             annotations:
-              nginx.ingress.kubernetes.io/proxy-body-size: 4G
+              nginx.ingress.kubernetes.io/affinity: cookie
+              nginx.ingress.kubernetes.io/proxy-body-size: "0" # Was "4G"
+              nginx.ingress.kubernetes.io/proxy-buffer-size: 4k
+              nginx.ingress.kubernetes.io/proxy-buffering: "off"
+              nginx.ingress.kubernetes.io/proxy-connect-timeout: "60"
+              nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+              nginx.ingress.kubernetes.io/proxy-request-buffering: "on"
+              nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+              nginx.ingress.kubernetes.io/enable-cors: "true"
+              nginx.ingress.kubernetes.io/cors-allow-headers: "X-Forwarded-For"
               kubernetes.io/tls-acme: "true"
               cert-manager.io/cluster-issuer: letsencrypt-prod-nginx
               nginx.ingress.kubernetes.io/server-snippet: |-
@@ -73,6 +82,17 @@ spec:
               repository: nginxinc/nginx-unprivileged
               tag: alpine3.20
             containerPort: 8080
+            config:
+              default: true
+              headers:
+                "Strict-Transport-Security": ""
+                "Referrer-Policy": "no-referrer"
+                "X-Content-Type-Options": "nosniff"
+                "X-Download-Options": "noopen"
+                "X-Frame-Options": "SAMEORIGIN"
+                "X-Permitted-Cross-Domain-Policies": "none"
+                "X-Robots-Tag": "noindex, nofollow"
+                "X-XSS-Protection": "1; mode=block"          
             securityContext:
               runAsUser: 82
               runAsGroup: 33
@@ -106,9 +126,6 @@ spec:
                     'OC\Preview\PDF'
                   ),
                 );
-            phpConfigs:
-              zz-php_upload_size.ini: |
-                upload_max_filesize=10G
             extraEnv:
               - name: PHP_MEMORY_LIMIT
                 value: "1024M"
