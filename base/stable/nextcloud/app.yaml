@@ -84,14 +84,13 @@ spec:
             containerPort: 8080
             config:
               default: true
-              custom:
-                custom.conf: |
-                  server {
-                    location / {
-                      proxy_read_timeout 3600s;
-                      proxy_send_timeout 3600s;
-                    }
+              custom: |
+                server {
+                  location / {
+                    proxy_read_timeout 3600s;
+                    proxy_send_timeout 3600s;
                   }
+                }
               headers:
                 "Strict-Transport-Security": ""
                 "Referrer-Policy": "no-referrer"
