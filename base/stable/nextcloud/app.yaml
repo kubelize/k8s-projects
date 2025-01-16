@@ -91,6 +91,7 @@ spec:
                     proxy_send_timeout 3600s;
                     fastcgi_read_timeout 3600s;
                     fastcgi_send_timeout 3600s;
+                    fastcgi_request_buffering off;
                   }
                 }
               headers:
@@ -169,6 +170,9 @@ spec:
                 post_max_size=10240M
               zz-memory-limit.ini: |-
                 memory_limit=1024M
+              zz-timeout.ini: |-
+                request_terminate_timeout = 3600s
+                max_execution_time = 3600
             username: admin
             password: initial-access-1234!
             containerPort: 8080
