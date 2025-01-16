@@ -131,10 +131,9 @@ spec:
                 );
               chunksize.config.php: |-
                 <?php
-                  $CONFIG = array(
-                    'files.chunked_upload.max_size'=> 100 * 1024 * 1024,
-                    ),
-                  );
+                $CONFIG = array(
+                    'files.chunked_upload.max_size' => 100 * 1024 * 1024,
+                );
               previews.config.php: |-
                 <?php
                 $CONFIG = array (
