@@ -86,12 +86,14 @@ spec:
               default: true
               custom: |
                 server {
-                  location / {
-                    proxy_read_timeout 3600s;
-                    proxy_send_timeout 3600s;
+                  location ~ \.php(?:$|/) {
                     fastcgi_read_timeout 3600s;
                     fastcgi_send_timeout 3600s;
                     fastcgi_request_buffering off;
+                  }
+                  location / {
+                    proxy_read_timeout 3600s;
+                    proxy_send_timeout 3600s;
                   }
                 }
               headers:
@@ -171,8 +173,8 @@ spec:
               zz-memory-limit.ini: |-
                 memory_limit=1024M
               zz-timeout.ini: |-
-                request_terminate_timeout = 3600s
-                max_execution_time = 3600
+                request_terminate_timeout=3600
+                max_execution_time=3600
             username: admin
             password: initial-access-1234!
             containerPort: 8080
