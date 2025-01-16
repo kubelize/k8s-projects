@@ -128,12 +128,7 @@ spec:
                     1 => '10.0.0.0/8',
                   ),
                   'forwarded_for_headers' => array('HTTP_X_FORWARDED_FOR'),
-                );
-              tempdir.config.php: |-
-                <?php
-                $CONFIG = array (
-                  'tempdirectory' => '/tmp',
-                );           
+                );              
               previews.config.php: |-
                 <?php
                 $CONFIG = array (
@@ -197,17 +192,12 @@ spec:
                   defaultMode: 0550
               - name: nginx-cache
                 emptyDir: {}
-              - name: nextcloud-tempdir
-                emptyDir: {}
-                sizeLimit: 10Gi
             extraVolumeMounts:
               - name: before-starting-scripts
                 mountPath: /docker-entrypoint-hooks.d/before-starting/install-apps.sh
                 subPath: install-apps.sh
               - name: nginx-cache
                 mountPath: "/var/cache/nginx"
-              - name: nextcloud-tempdir
-                mountPath: "/tmp"
           internalDatabase:
             enabled: false
           externalDatabase:
