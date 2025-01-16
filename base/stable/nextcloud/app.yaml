@@ -128,7 +128,13 @@ spec:
                     1 => '10.0.0.0/8',
                   ),
                   'forwarded_for_headers' => array('HTTP_X_FORWARDED_FOR'),
-                );              
+                );
+              chunksize.config.php: |-
+                <?php
+                  $CONFIG = array(
+                    'files.chunked_upload.max_size'=> 100 * 1024 * 1024,
+                    ),
+                  );
               previews.config.php: |-
                 <?php
                 $CONFIG = array (
@@ -148,10 +154,6 @@ spec:
                   ),
                 );
             extraEnv:
-              # - name: PHP_MEMORY_LIMIT
-              #   value: "1024M"
-              # - name: PHP_UPLOAD_LIMIT
-              #   value: "10240M"
               - name: PHP_INI_SCAN_DIR
                 value: ":/usr/local/etc/php-fpm.d/"
             defaultConfigs:
