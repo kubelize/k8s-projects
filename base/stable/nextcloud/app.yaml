@@ -132,7 +132,7 @@ spec:
               tempdir.config.php: |-
                 <?php
                 $CONFIG = array (
-                  'tempdirectory' => '/var/cache/nextcloud',
+                  'tempdirectory' => '/tmp',
                 );           
               previews.config.php: |-
                 <?php
@@ -207,7 +207,7 @@ spec:
               - name: nginx-cache
                 mountPath: "/var/cache/nginx"
               - name: nextcloud-tempdir
-                mountPath: "/var/cache/nextcloud"
+                mountPath: "/tmp"
           internalDatabase:
             enabled: false
           externalDatabase:
