@@ -89,6 +89,8 @@ spec:
                   location / {
                     proxy_read_timeout 3600s;
                     proxy_send_timeout 3600s;
+                    fastcgi_read_timeout 3600s;
+                    fastcgi_send_timeout 3600s;
                   }
                 }
               headers:
@@ -150,6 +152,7 @@ spec:
               - name: PHP_INI_SCAN_DIR
                 value: ":/usr/local/etc/php-fpm.d/"
             defaultConfigs:
+              .htaccess: false
               apache-pretty-urls.config.php: false
               s3.config.php: false
               smtp.config.php: true
