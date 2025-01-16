@@ -86,15 +86,7 @@ spec:
               default: true
               custom: |
                 server {
-                  location ~ \.php(?:$|/) {
-                    fastcgi_read_timeout 3600s;
-                    fastcgi_send_timeout 3600s;
-                    fastcgi_request_buffering off;
-                  }
-                  location / {
-                    proxy_read_timeout 3600s;
-                    proxy_send_timeout 3600s;
-                  }
+                fastcgi_read_timeout 3600s;
                 }
               headers:
                 "Strict-Transport-Security": ""
