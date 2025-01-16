@@ -89,6 +89,7 @@ spec:
                     server 127.0.0.1:9000;
                 }
                 server {
+<<<<<<< HEAD
                     # Default, IPv4 only
                     listen 8080;
 
@@ -223,6 +224,16 @@ spec:
                     location / {
                         try_files $uri $uri/ /index.php$request_uri;
                     }
+=======
+                  location ~ \.php(?:$|/) {
+                    fastcgi_read_timeout 3600s;
+                    fastcgi_send_timeout 3600s;
+                    fastcgi_request_buffering off;
+                  }
+                  proxy_read_timeout 3600s;
+                  proxy_send_timeout 3600s;
+                  client_max_body_size 0;
+>>>>>>> parent of 00ba10b (chore: adding even more configs to nginx)
                 }
               headers:
                 "Strict-Transport-Security": ""
