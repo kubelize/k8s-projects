@@ -27,8 +27,8 @@ spec:
         valuesObject:
           image:
             flavour: fpm
-            repository: kubelize/nextcloud
-            tag: 0.1.2
+            repository: linuxserver/nextcloud
+            tag: amd64-30.0.4
           phpClientHttpsFix:
             enabled: true
             protocol: https
@@ -77,41 +77,7 @@ spec:
                 hosts:
                   - nextcloud.kube.home
           nginx:
-            enabled: true
-            image:
-              repository: nginxinc/nginx-unprivileged
-              tag: alpine3.20
-            containerPort: 8080
-            config:
-              default: true
-              custom: |
-                server {
-                  location ~ \.php(?:$|/) {
-                    fastcgi_read_timeout 3600;
-                    fastcgi_send_timeout 3600;
-                    fastcgi_request_buffering off;
-                    fastcgi_connect_timeout 60;
-                  }
-                  client_max_body_size 0;
-                  proxy_connect_timeout 3600s;
-                  proxy_send_timeout 3600s;
-                  proxy_read_timeout 3600s;
-                  send_timeout 3600s;
-                }
-              headers:
-                "Strict-Transport-Security": ""
-                "Referrer-Policy": "no-referrer"
-                "X-Content-Type-Options": "nosniff"
-                "X-Download-Options": "noopen"
-                "X-Frame-Options": "SAMEORIGIN"
-                "X-Permitted-Cross-Domain-Policies": "none"
-                "X-Robots-Tag": "noindex, nofollow"
-                "X-XSS-Protection": "1; mode=block"          
-            securityContext:
-              runAsUser: 82
-              runAsGroup: 33
-              runAsNonRoot: true
-              readOnlyRootFilesystem: false
+            enabled: false
           nextcloud:
             configs:
               custom.config.php: |
@@ -180,14 +146,14 @@ spec:
                 max_execution_time=3600
             username: admin
             password: initial-access-1234!
-            containerPort: 8080
+            containerPort: 443
             securityContext:
-              runAsUser: 82
-              runAsGroup: 33
+              runAsUser: 1000
+              runAsGroup: 1000
               runAsNonRoot: true
               readOnlyRootFilesystem: false
             podSecurityContext:
-              fsGroup: 33
+              fsGroup: 1000
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
