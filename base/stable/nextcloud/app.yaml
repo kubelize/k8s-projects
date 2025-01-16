@@ -83,7 +83,7 @@ spec:
               tag: alpine3.20
             containerPort: 8080
             config:
-              default: false
+              default: true
               custom: |
                 server {
                   location ~ \.php(?:$|/) {
