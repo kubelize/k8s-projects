@@ -39,7 +39,7 @@ spec:
               nginx.ingress.kubernetes.io/affinity: cookie
               nginx.ingress.kubernetes.io/proxy-body-size: "0"
               nginx.ingress.kubernetes.io/proxy-buffer-size: 4k
-              nginx.ingress.kubernetes.io/proxy-buffering: "on"
+              nginx.ingress.kubernetes.io/proxy-buffering: "off"
               nginx.ingress.kubernetes.io/proxy-connect-timeout: "60"
               nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
               nginx.ingress.kubernetes.io/proxy-request-buffering: "on"
@@ -83,20 +83,18 @@ spec:
               tag: alpine3.20
             containerPort: 8080
             config:
-              default: false
+              default: true
               custom: |
-                upstream php-handler {
-                    server 127.0.0.1:9000;
-                }
                 server {
                   location ~ \.php(?:$|/) {
                     fastcgi_read_timeout 3600s;
                     fastcgi_send_timeout 3600s;
                     fastcgi_request_buffering off;
                   }
-                  proxy_read_timeout 3600s;
-                  proxy_send_timeout 3600s;
-                  client_max_body_size 0;
+                  location / {
+                    proxy_read_timeout 3600s;
+                    proxy_send_timeout 3600s;
+                  }
                 }
               headers:
                 "Strict-Transport-Security": ""
