@@ -291,12 +291,10 @@ spec:
             master:
               resourcesPreset: "micro"
               persistence:
-                enabled: true
-                size: 1Gi
+                enabled: false
             replica:
               resourcesPreset: "micro"
               persistence:
-                enabled: true
-                size: 1Gi
+                enabled: false
           persisitence:
             enabled: false
