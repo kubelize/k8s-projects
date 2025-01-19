@@ -170,7 +170,7 @@ spec:
                 "X-XSS-Protection": "1; mode=block"          
             securityContext:
               runAsUser: 82
-              runAsGroup: 33
+              runAsGroup: 82
               runAsNonRoot: true
               readOnlyRootFilesystem: false
           nextcloud:
@@ -239,11 +239,11 @@ spec:
             containerPort: 8080
             securityContext:
               runAsUser: 82
-              runAsGroup: 33
+              runAsGroup: 82
               runAsNonRoot: true
               readOnlyRootFilesystem: false
-            podSecurityContext:
-              fsGroup: 33
+            # podSecurityContext:
+            #   fsGroup: 33
             extraVolumes:
               - name: before-starting-scripts
                 configMap:
@@ -257,6 +257,21 @@ spec:
                 subPath: install-apps.sh
               - name: nginx-cache
                 mountPath: "/var/cache/nginx"
+            extraInitContainers:
+              - name: nextcloud-init
+                image: nextcloud:30.0.4-fpm-alpine
+                command:
+                  - sh
+                  - "-c"
+                  - |-
+                    /bin/chown -R 82:82 /var/www/html
+                    find /var/www/html -type d -exec chmod 750 {} \;
+                    find /var/www/html -type f -exec chmod 640 {} \;
+                securityContext:
+                  capabilities:
+                    add: ["CHOWN"]
+                    runAsUser: 0
+                    runAsNonRoot: false
           internalDatabase:
             enabled: false
           externalDatabase:

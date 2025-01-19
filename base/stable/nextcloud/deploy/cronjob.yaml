@@ -10,8 +10,8 @@ spec:
         spec:
           securityContext:
             runAsUser: 82
-            runAsGroup: 82
             runAsNonRoot: true
+            fsGroup: 33
           volumes:
             - name: nextcloud-main
               persistentVolumeClaim:
