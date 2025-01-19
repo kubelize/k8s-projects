@@ -10,7 +10,7 @@ resources:
   - ../../../base/stable/nextcloud/
   # - ../../../base/stable/gameservers/sdtd/
   # - ../../../base/stable/gameservers/conan-exiles/
-  - ../../../base/stable/gameservers/minecraft/vanilla/
+  # - ../../../base/stable/gameservers/minecraft/vanilla/
   - ../../../base/stable/uptime-kuma/
 
   # secrets
@@ -21,10 +21,10 @@ patches:
     target:
       kind: Application
       name: pihole
-  - path: ./patches/vanilla-minecraft.yaml
-    target:
-      kind: Application
-      name: vanilla-minecraft
+#  - path: ./patches/vanilla-minecraft.yaml
+#    target:
+#      kind: Application
+#      name: vanilla-minecraft
   - path: ./patches/nextcloud-values.yaml
     target:
       kind: Application
