@@ -76,6 +76,13 @@ spec:
               - secretName: nextcloud-tls
                 hosts:
                   - nextcloud.kube.home
+          cronjob:
+            enabled: true
+              securityContext:
+                runAsUser: 33
+                runAsGroup: 33
+                runAsNonRoot: true
+                readOnlyRootFilesystem: true
           nginx:
             enabled: true
             image:
