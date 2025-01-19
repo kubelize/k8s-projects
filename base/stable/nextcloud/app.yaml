@@ -76,8 +76,6 @@ spec:
               - secretName: nextcloud-tls
                 hosts:
                   - nextcloud.kube.home
-          cronjob:
-            enabled: true
           nginx:
             enabled: true
             image:
