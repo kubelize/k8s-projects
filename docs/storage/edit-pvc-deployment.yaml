@@ -19,8 +19,9 @@ spec:
         image: debian:latest
         command: ["/bin/sleep", "infinity"]  # Keeps the container running
         volumeMounts:
-        - name: old-pvc
+        - name: pvc-volume
           mountPath: /data/old
+      volumes:
       - name: pvc-volume
         persistentVolumeClaim:
-          claimName: terraria-farfaraway-data # Name of your existing PVC
+          claimName: vanilla-minecraft-minecraft-datadir # Name of your existing PVC
