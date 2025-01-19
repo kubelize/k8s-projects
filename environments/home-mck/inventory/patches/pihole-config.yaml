@@ -19,7 +19,7 @@
 - op: add
   path: "/spec/source/helm/valuesObject/DNS2"
   value: 1.0.0.1
-- op: add
-  path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
-  value:
-    - address=/mc.mckensy.xyz/192.168.1.231
+#- op: add
+#  path: "/spec/source/helm/valuesObject/dnsmasq/customDnsEntries"
+#  value:
+#    - address=/mc.mckensy.xyz/192.168.1.231
