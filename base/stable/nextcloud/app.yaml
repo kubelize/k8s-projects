@@ -29,6 +29,8 @@ spec:
             flavour: fpm
             repository: kubelize/nextcloud
             tag: 0.1.2
+          deploymentLabels:
+            cronjob: nextcloud
           phpClientHttpsFix:
             enabled: true
             protocol: https
@@ -270,8 +272,6 @@ spec:
                 securityContext:
                   capabilities:
                     add: ["CHOWN"]
-                    runAsUser: 0
-                    runAsNonRoot: false
           internalDatabase:
             enabled: false
           externalDatabase:

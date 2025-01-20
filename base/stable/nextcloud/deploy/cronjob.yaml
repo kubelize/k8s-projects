@@ -13,7 +13,7 @@ spec:
               requiredDuringSchedulingIgnoredDuringExecution:
                 - labelSelector:
                     matchLabels:
-                      kubernetes.io/name: nextcloud
+                      cronjob: nextcloud
                   topologyKey: "kubernetes.io/hostname"
           securityContext:
             runAsUser: 82
