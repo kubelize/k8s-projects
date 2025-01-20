@@ -29,7 +29,7 @@ spec:
             flavour: fpm
             repository: kubelize/nextcloud
             tag: 0.1.2
-          deploymentLabels:
+          podLabels:
             cronjob: nextcloud
           phpClientHttpsFix:
             enabled: true
