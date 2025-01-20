@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - before-starting-scripts-configmap.yaml
   - cronjob.yaml
+  - assistant-background-worker.yaml

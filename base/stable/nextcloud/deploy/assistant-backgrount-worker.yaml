@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assistant-background-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assistant-background-worker
+  template:
+    metadata:
+      labels:
+        app: assistant-background-worker
+    spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  cronjob: nextcloud
+              topologyKey: "kubernetes.io/hostname"
+      securityContext:
+        runAsUser: 82
+        fsGroup: 82
+        runAsNonRoot: true
+      volumes:
+        - name: nextcloud-main
+          persistentVolumeClaim:
+            claimName: nextcloud-nextcloud
+      containers:
+        - name: nextcloud-cron
+          image: nextcloud:30.0.4-fpm-alpine
+          imagePullPolicy: IfNotPresent
+          command:
+            - sh
+            - "-c"
+            - |-
+              set -e; while true; do php occ background-job:worker -v -t 60 "OC\TaskProcessing\SynchronousBackgroundJob"; done
+          volumeMounts:
+            - mountPath: /var/www/
+              name: nextcloud-main
+              subPath: root
+            - mountPath: /var/www/html/
+              name: nextcloud-main
+              subPath: html
+            - mountPath: /var/www/html/config
+              name: nextcloud-main
+              subPath: config
+            - mountPath: /var/www/html/custom_apps
+              name: nextcloud-main
+              subPath: custom_apps
+            - mountPath: /var/www/html/data
+              name: nextcloud-main
+              subPath: data
+            - mountPath: /var/www/html/themes
+              name: nextcloud-main
+              subPath: themes
+            - mountPath: /var/www/html/tmp
+              name: nextcloud-main
+              subPath: tmp
+      restartPolicy: Always
